@@ -1,0 +1,11 @@
+CompileFlags:
+  # Allows clangd to read the devkitPro / arm-none-eabi compiler libraries
+  QueryDriver:
+    - /opt/devkitpro/*/bin/*
+    - C:/devkitPro/*/bin/*
+    - /usr/bin/arm-none-eabi-*
+
+# Remove compiler flags that clangd doesn't natively understand 
+# to prevent irrelevant warnings
+Diagnostics:
+  Suppress: ["drv_unknown_argument"]

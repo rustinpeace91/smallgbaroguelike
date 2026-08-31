@@ -37,28 +37,29 @@ class Movement
 public:
     direction player_direction;
     std::array<int, 4> playerAngles;
-    coordinates coordinates;
+    coordinates current_coordinates;
     int valid_tile_index;
-    bg::regular_bg_ptr map_bg;
-    bg::sprite_ptr dog_sprite;
+    int player_dir_counter;
+    bn::regular_bg_ptr map_bg;
+    bn::sprite_ptr dog_sprite;
+    bn::regular_bg_map_item map_item; 
+    bn::regular_bg_map_cell valid_map_cell;
 
-    Movement(
-        bg::regular_bg_ptr &map_bg,
-        bg::sprite_ptr &dog_sprite)
+    Movement(bn::regular_bg_ptr &map_bg_param, bn::sprite_ptr &dog_sprite_param) :
+        map_bg(map_bg_param),
+        dog_sprite(dog_sprite_param),
+        map_item(bn::regular_bg_items::map.map_item()),
+        valid_map_cell(map_item.cell(0, 0))
     {
-        map_pg = map_bg;
-        dog_sprite = dog_sprite;
         bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
-        common::info info("Map collision", info_text_lines, text_generator);
-
-        bn::regular_bg_ptr map_bg = bn::regular_bg_items::map.create_bg(0, 0);
-        bn::sprite_ptr dog_sprite = bn::sprite_items::tinyarrow2.create_sprite(0, 0);
-
-        const bn::regular_bg_map_item &map_item = bn::regular_bg_items::map.map_item();
-        bn::regular_bg_map_cell valid_map_cell = map_item.cell(0, 0);
-        int valid_tile_index = bn::regular_bg_map_cell_info(valid_map_cell).tile_index();
+        
+        this->map_bg = bn::regular_bg_items::map.create_bg(0, 0);
+        this->dog_sprite = bn::sprite_items::tinyarrow2.create_sprite(0, 0);
+        
+        this->valid_tile_index = bn::regular_bg_map_cell_info(valid_map_cell).tile_index();
+        
         bn::point dog_map_position(16, 16);
-        int player_dir_counter = 0;
+        player_dir_counter = 0;
     }
 
     int increment_direction(int counter, int step)
