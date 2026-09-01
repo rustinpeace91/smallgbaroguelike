@@ -1,1 +1,391 @@
-[]
+[
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/smallgbaroguelike/src/main.cpp -o main.o",
+  "file": "/home/bazzite/code/gba/smallgbaroguelike/src/main.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/smallgbaroguelike/src/main.cpp -o main.o",
+  "file": "/home/bazzite/code/gba/smallgbaroguelike/src/main.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -fno-lto -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_common.bn_noflto.cpp -o bn_hw_common.bn_noflto.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_common.bn_noflto.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_cstdlib.cpp -o bn_hw_cstdlib.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_cstdlib.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_cstring.cpp -o bn_hw_cstring.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_cstring.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_dmg_audio.cpp -o bn_hw_dmg_audio.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_dmg_audio.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -fno-lto -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_game_pak.bn_ewram.cpp -o bn_hw_game_pak.bn_ewram.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_game_pak.bn_ewram.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -fno-lto -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_gpio.bn_noflto.cpp -o bn_hw_gpio.bn_noflto.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_gpio.bn_noflto.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_link.cpp -o bn_hw_link.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_link.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -fno-lto -marm -mlong-calls -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_palettes.bn_iwram.cpp -o bn_hw_palettes.bn_iwram.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_palettes.bn_iwram.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_palettes.cpp -o bn_hw_palettes.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_palettes.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_show.cpp -o bn_hw_show.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_show.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -fno-lto -marm -mlong-calls -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_sprite_tiles.bn_iwram.cpp -o bn_hw_sprite_tiles.bn_iwram.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_sprite_tiles.bn_iwram.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -fno-lto -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_sram.bn_ewram.cpp -o bn_hw_sram.bn_ewram.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_sram.bn_ewram.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -fno-lto -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_sram.bn_noflto.cpp -o bn_hw_sram.bn_noflto.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_sram.bn_noflto.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_system_font.cpp -o bn_hw_system_font.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_system_font.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -Wuseless-cast -Wnon-virtual-dtor -Woverloaded-virtual -std=c++23 -fno-rtti -fno-exceptions -fno-threadsafe-statics -fuse-cxa-atexit  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_text.cpp -o bn_hw_text.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_text.cpp"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_color.c -o tonc_color.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_color.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc  -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -fno-lto -marm -mlong-calls -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_core.bn_iwram.c -o tonc_core.bn_iwram.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_core.bn_iwram.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_sbmp16.c -o tonc_sbmp16.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_sbmp16.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_schr4c.c -o tonc_schr4c.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_schr4c.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_schr4r.c -o tonc_schr4r.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_schr4r.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_surface.c -o tonc_surface.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tonc_surface.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tte/bmp16_drawg_b1cs.c -o bmp16_drawg_b1cs.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tte/bmp16_drawg_b1cs.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tte/tte_init_bmp.c -o tte_init_bmp.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tte/tte_init_bmp.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tte/tte_main.c -o tte_main.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/tte/tte_main.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/src/interrupts_gba.c -o interrupts_gba.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/src/interrupts_gba.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/coroutine.c -o coroutine.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/coroutine.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/rtc.c -o rtc.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/rtc.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/core/effect.c -o effect.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/core/effect.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/core/mas_arm.c -o mas_arm.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/core/mas_arm.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/core/mas.c -o mas.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/core/mas.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/gba/main_gba.c -o main_gba.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/gba/main_gba.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/gba/mixer.c -o mixer.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/gba/mixer.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/gbt-player/src/gbt_player.c -o gbt_player.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/gbt-player/src/gbt_player.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc   -Wall -Wextra -Wpedantic -Wshadow -Wundef -Wunused-parameter -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wswitch-default -Wstack-usage=16384 -gdwarf-4 -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -ffast-math -ffunction-sections -fdata-sections -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT -iquote /home/bazzite/code/gba/smallgbaroguelike/include -I/home/bazzite/code/gba/butano/butano/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/include -I/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/include -I/home/bazzite/code/gba/smallgbaroguelike/build -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/advgm/src/advgm.c -o advgm.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/advgm/src/advgm.c"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_bg_blocks.s -o bn_hw_bg_blocks.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_bg_blocks.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_core.s -o bn_hw_core.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_core.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_hblank_effects.s -o bn_hw_hblank_effects.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_hblank_effects.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/src/bn_hw_palettes_asm.s -o bn_hw_palettes_asm.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/src/bn_hw_palettes_asm.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/clr_blend_fast.s -o clr_blend_fast.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/clr_blend_fast.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/clr_fade_fast.s -o clr_fade_fast.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/clr_fade_fast.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/tonc_bios.s -o tonc_bios.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/tonc_bios.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/tonc_memset.s -o tonc_memset.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/tonc_memset.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/tonc_nocash.s -o tonc_nocash.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/asm/tonc_nocash.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/font/verdana9.s -o verdana9.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libtonc/src/font/verdana9.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/src/irq_handler.s -o irq_handler.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/libugba/src/irq_handler.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/posprintf/src/posprintf.s -o posprintf.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/posprintf/src/posprintf.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/atan2.s -o atan2.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/atan2.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/coroutine_asm.s -o coroutine_asm.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/coroutine_asm.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/fiq_memcpy.s -o fiq_memcpy.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/fiq_memcpy.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/memcpy.s -o memcpy.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/memcpy.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/memmove.s -o memmove.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/memmove.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/memset.s -o memset.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/memset.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/rmemcpy.s -o rmemcpy.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/agbabi/src/rmemcpy.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_div.s -o stdgba_div.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_div.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_ldiv.s -o stdgba_ldiv.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_ldiv.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_lmul.s -o stdgba_lmul.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_lmul.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_memcpy.s -o stdgba_memcpy.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_memcpy.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_memset.s -o stdgba_memset.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/stdgba/src/stdgba_memset.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/gba-modern/src/clz.s -o clz.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/gba-modern/src/clz.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/gba-modern/src/sqrt32.s -o sqrt32.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/gba-modern/src/sqrt32.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/cult-of-gba-bios/src/lz77.s -o lz77.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/cult-of-gba-bios/src/lz77.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/cult-of-gba-bios/src/running_length.s -o running_length.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/cult-of-gba-bios/src/running_length.s"
+}
+,
+{
+  "directory": "/home/bazzite/code/gba/smallgbaroguelike/build",
+  "command": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc -x assembler-with-cpp   -gdwarf-4 -mthumb -mthumb-interwork -DBN_EWRAM_BSS_SECTION=\".sbss\" -DBN_IWRAM_START=__iwram_start__ -DBN_IWRAM_TOP=__iwram_top -DBN_IWRAM_END=__fini_array_end -DBN_ROM_START=__text_start -DBN_ROM_END=__rom_end__ -DBN_TOOLCHAIN_TAG=\"DKA\" -DBN_AUDIO_BACKEND_MAXMOD -D__GBA__ -DBN_DMG_AUDIO_BACKEND_DEFAULT  -c /home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/gba/mixer_asm.s -o mixer_asm.o",
+  "file": "/home/bazzite/code/gba/butano/butano/hw/3rd_party/maxmod/src/gba/mixer_asm.s"
+}
+]
