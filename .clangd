@@ -1,0 +1,16 @@
+CompileFlags:
+  Add:
+    - -target
+    - arm-none-eabi
+    - -I/home/bazzite/code/gba/butano/butano/include
+    - -Iinclude
+  
+  # QueryDriver:
+  #   - /opt/devkitpro/*/bin/*
+  #   - C:/devkitPro/*/bin/*
+  #   - /usr/bin/arm-none-eabi-*
+
+# Remove compiler flags that clangd doesn't natively understand 
+# to prevent irrelevant warnings
+Diagnostics:
+  Suppress: ["drv_unknown_argument"]
