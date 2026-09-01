@@ -34,7 +34,6 @@ class Movement
 {
 public:
     direction player_direction;
-    std::array<int, 4> playerAngles;
     coordinates current_coordinates;
     int valid_tile_index;
     int player_dir_counter;
