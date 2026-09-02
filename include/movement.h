@@ -34,7 +34,7 @@ class Movement
 {
 public:
     direction player_direction;
-    std::array<int, 4> playerAngles;
+    // std::array<int, 4> playerAngles;
     coordinates current_coordinates;
     int valid_tile_index;
     int player_dir_counter;
@@ -53,12 +53,9 @@ public:
         valid_map_cell(map_item.cell(0, 0))
     {
         bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
-        
         // this->map_bg = bn::regular_bg_items::map.create_bg(0, 0);
         // this->dog_sprite = bn::sprite_items::tinyarrow2.create_sprite(0, 0);
-        
         this->valid_tile_index = bn::regular_bg_map_cell_info(valid_map_cell).tile_index();
-        
         // bn::point dog_map_position(16, 16);
         player_dir_counter = 0;
     }
