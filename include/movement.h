@@ -35,29 +35,29 @@ class Movement
 public:
     direction player_direction;
     // std::array<int, 4> playerAngles;
-    coordinates current_coordinates;
-    int valid_tile_index;
-    int player_dir_counter;
-    bn::regular_bg_ptr map_bg;
-    bn::sprite_ptr dog_sprite;
-    bn::point dog_map_position;
-    bn::regular_bg_map_item map_item; 
-    bn::regular_bg_map_cell valid_map_cell;
+    coordinates current_coordinates_;
+    int valid_tile_index_;
+    int player_dir_counter_;
+    bn::regular_bg_ptr map_bg_;
+    bn::sprite_ptr dog_sprite_;
+    bn::point dog_map_position_;
+    bn::regular_bg_map_item map_item_; 
+    bn::regular_bg_map_cell valid_map_cell_;
 
 
     Movement(bn::regular_bg_ptr &map_bg_param, bn::sprite_ptr &dog_sprite_param) :
-        map_bg(map_bg_param),
-        dog_sprite(dog_sprite_param),
-        dog_map_position(16, 16),
-        map_item(bn::regular_bg_items::map.map_item()),
-        valid_map_cell(map_item.cell(0, 0))
+        map_bg_(map_bg_param),
+        dog_sprite_(dog_sprite_param),
+        dog_map_position_(16, 16),
+        map_item_(bn::regular_bg_items::map.map_item()),
+        valid_map_cell_(map_item_.cell(0, 0))
     {
         bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
         // this->map_bg = bn::regular_bg_items::map.create_bg(0, 0);
-        // this->dog_sprite = bn::sprite_items::tinyarrow2.create_sprite(0, 0);
-        this->valid_tile_index = bn::regular_bg_map_cell_info(valid_map_cell).tile_index();
-        // bn::point dog_map_position(16, 16);
-        player_dir_counter = 0;
+        // this->dog_sprite_ = bn::sprite_items::tinyarrow2.create_sprite(0, 0);
+        this->valid_tile_index_ = bn::regular_bg_map_cell_info(valid_map_cell_).tile_index();
+        // bn::point dog_map_position_(16, 16);
+        player_dir_counter_ = 0;
     }
 
     int increment_direction(int counter, int step)
@@ -108,61 +108,61 @@ public:
     }
     void update()
     {
-        bn::point new_dog_map_position = dog_map_position;
+        bn::point new_dog_map_position = dog_map_position_;
 
         if (bn::keypad::left_pressed())
         {
             // new_dog_map_position.set_x(new_dog_map_position.x() - 1);
-            // dog_sprite.set_horizontal_flip(true);
-            player_dir_counter = increment_direction(player_dir_counter, 1);
+            // dog_sprite_.set_horizontal_flip(true);
+            player_dir_counter_ = increment_direction(player_dir_counter_, 1);
 
-            debug_logger(player_dir_counter);
-            dog_sprite.set_rotation_angle(playerAngles[player_dir_counter]);
-            // dog_sprite.set_rotation_angle(90);
+            debug_logger(player_dir_counter_);
+            dog_sprite_.set_rotation_angle(playerAngles[player_dir_counter_]);
+            // dog_sprite_.set_rotation_angle(90);
         }
         else if (bn::keypad::right_pressed())
         {
             // new_dog_map_position.set_x(new_dog_map_position.x() + 1);
-            player_dir_counter = increment_direction(player_dir_counter, -1);
-            // dog_sprite.set_horizontal_flip(false);
-            debug_logger(player_dir_counter);
-            dog_sprite.set_rotation_angle(playerAngles[player_dir_counter]);
+            player_dir_counter_ = increment_direction(player_dir_counter_, -1);
+            // dog_sprite_.set_horizontal_flip(false);
+            debug_logger(player_dir_counter_);
+            dog_sprite_.set_rotation_angle(playerAngles[player_dir_counter_]);
         }
 
         if (bn::keypad::up_pressed())
         {
 
-            direction dir = static_cast<direction>(player_dir_counter);
+            direction dir = static_cast<direction>(player_dir_counter_);
             coordinates new_movement = genereate_new_playerdir(dir, 1);
             int new_y = new_dog_map_position.y() + new_movement.y;
             int new_x = new_dog_map_position.x() + new_movement.x;
             new_dog_map_position.set_y(new_y);
             new_dog_map_position.set_x(new_x);
 
-            // dog_sprite.set_rotation_angle(90);
+            // dog_sprite_.set_rotation_angle(90);
         }
         else if (bn::keypad::down_pressed())
         {
 
-            direction dir = static_cast<direction>(player_dir_counter);
+            direction dir = static_cast<direction>(player_dir_counter_);
             coordinates new_movement = genereate_new_playerdir(dir, -1);
             int new_y = new_dog_map_position.y() + new_movement.y;
             int new_x = new_dog_map_position.x() + new_movement.x;
             new_dog_map_position.set_y(new_y);
             new_dog_map_position.set_x(new_x);
-            // dog_sprite.set_rotation_angle(270);
+            // dog_sprite_.set_rotation_angle(270);
         }
 
-        bn::regular_bg_map_cell dog_map_cell = map_item.cell(new_dog_map_position);
+        bn::regular_bg_map_cell dog_map_cell = map_item_.cell(new_dog_map_position);
         int dog_tile_index = bn::regular_bg_map_cell_info(dog_map_cell).tile_index();
 
-        if (dog_tile_index == valid_tile_index)
+        if (dog_tile_index == valid_tile_index_)
         {
-            dog_map_position = new_dog_map_position;
+            dog_map_position_ = new_dog_map_position;
         }
 
-        bn::fixed dog_sprite_x = bn::fixed(dog_map_position.x() * 8) - bn::fixed(map_item.dimensions().width() * 4) + bn::fixed(4);
-        bn::fixed dog_sprite_y = bn::fixed(dog_map_position.y() * 8) - bn::fixed(map_item.dimensions().height() * 4) + bn::fixed(4);
-        dog_sprite.set_position(dog_sprite_x, dog_sprite_y);
+        bn::fixed dog_sprite_x = bn::fixed(dog_map_position_.x() * 8) - bn::fixed(map_item_.dimensions().width() * 4) + bn::fixed(4);
+        bn::fixed dog_sprite_y = bn::fixed(dog_map_position_.y() * 8) - bn::fixed(map_item_.dimensions().height() * 4) + bn::fixed(4);
+        dog_sprite_.set_position(dog_sprite_x, dog_sprite_y);
     }
 };
