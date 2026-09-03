@@ -20,12 +20,37 @@
 #include "bn_format.h"
 #include <array>
 #include "movement.h"
+#include "duymmy_data.h"
 
 enum modes {
     MOVE, MENU
 };
 
 modes game_mode = MOVE;
+
+
+void generate_menu_text(
+    bn::sprite_text_generator& text_generator,
+    bn::vector<bn::sprite_ptr, 128>& menu_text_sprites)
+{
+    int text_start_x = 60;
+    int text_start_y = 0;
+
+    int text_x = text_start_x;
+    int text_y = text_start_y;
+
+    for(const char* option : DummyData::MAIN_MENU_OPTIONS)
+    {
+        text_generator.generate(
+            text_x,
+            text_y,
+            bn::string_view(option),
+            menu_text_sprites
+        );
+
+        text_y += 20;
+    }
+}
 
 int main()
 {
@@ -40,9 +65,7 @@ int main()
     bn::regular_bg_ptr map_bg = bn::regular_bg_items::map.create_bg(0, 0);
     bn::sprite_ptr dog_sprite = bn::sprite_items::tinyarrow2.create_sprite(0, 0);
     Movement movementInstance(map_bg, dog_sprite); // Create instance of the class
-    // constexpr bn::string_view info_text_lines[] = {
-    //     "PAD: Move player"
-    // };
+    
     //
     //
     //
@@ -56,11 +79,15 @@ int main()
     menu_box.set_position(0  + (120 -(menu_width/2)), 0 + (80 - (menu_height/2)));
     // menu_box.set_vertical_scale(-1);
 
+    bn::vector<bn::sprite_ptr, 128> menu_text_sprites;
+
+
     while(true)
     {
         if(bn::keypad::b_pressed()){
             if(game_mode == MOVE){
                 game_mode = MENU;
+                generate_menu_text(text_generator, menu_text_sprites);
             } else {
                 game_mode = MOVE;
             }
@@ -71,7 +98,9 @@ int main()
 
             menu_box.set_visible(false);
         } else {
+
             menu_box.set_visible(true);
+
         }
         bn::core::update();
     }
