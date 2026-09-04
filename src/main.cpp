@@ -132,8 +132,6 @@ int main()
     int arrow_reset = 0;
     int arrow_position_y = -20;
     int menu_position_index = 0;
-    bool up_arrow_visible = false;
-    bool down_arrow_visible = false;
     int menu_size = std::ssize(DummyData::MAIN_MENU_OPTIONS);
     bn::fixed horizontal_scale = bn::fixed(menu_width) / 64;
     bn::fixed vertical_scale = bn::fixed(menu_height) / 64;
@@ -141,6 +139,7 @@ int main()
     up_arrow.set_y(bn::fixed(-10));
     down_arrow.set_x(bn::fixed(60));
     down_arrow.set_y(bn::fixed(72));
+    menu_arrow.set_visible(false);
     up_arrow.set_visible(false);
     down_arrow.set_visible(false);
     menu_box.set_scale(horizontal_scale, vertical_scale);
