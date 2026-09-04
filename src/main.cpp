@@ -22,14 +22,20 @@
 #include <array>
 #include "movement.h"
 #include "duymmy_data.h"
+#include "bn_sprite_palette_ptr.h"
 
 enum modes {
-    MOVE, MENU
+    MOVE, MENU, INVENTORY
 };
 
 
 modes game_mode = MOVE;
-
+enum class menu_options
+{
+    inventory = 0,
+    options = 1,
+    magic = 2
+};
 
 void generate_menu_text(
     bn::sprite_text_generator& text_generator,
@@ -54,6 +60,16 @@ void generate_menu_text(
     }
 }
 
+void generate_inventory_menu_text(
+    bn::sprite_text_generator& text_generator,
+    bn::vector<bn::sprite_ptr, 128>& menu_text_sprites,
+    int page_start,
+    int page_end
+){
+    // paginate
+    // DummyData::INVENTORY
+};
+
 int main()
 {
 
@@ -72,8 +88,20 @@ int main()
     //
     //
     // MENU STUFF
+    // ARROW
     bn::sprite_ptr menu_box = bn::sprite_items::bg.create_sprite(0, 0);
     bn::sprite_ptr menu_arrow = bn::sprite_items::menuarrow.create_sprite(0,0);
+
+    bn::sprite_palette_ptr arrow_palette = menu_arrow.palette();
+
+    // TURN ARROW YELLOW
+    bn::color arrow_original_color = arrow_palette.colors()[1]; 
+    bn::color yellow_color(31, 31, 0);
+
+    int flash_counter = 0;
+    bool is_yellow = false;
+
+    // MENU BOX
     int menu_width = 75;
     int menu_height = 100;
     int arrow_position_x = 50;
@@ -87,6 +115,7 @@ int main()
     menu_box.set_position(0  + (120 -(menu_width/2)), 0 + (80 - (menu_height/2)));
     menu_box.set_visible(false);
 
+    // MENU TEXT
     bn::vector<bn::sprite_ptr, 128> menu_text_sprites;
 
 
@@ -99,11 +128,41 @@ int main()
                 menu_box.set_visible(true);
                 menu_arrow.set_visible(true);
             } else {
+                // MAIN MENU
                 menu_position_index = 0;
                 game_mode = MOVE;
                 menu_text_sprites.clear();
                 menu_box.set_visible(false);
                 menu_arrow.set_visible(false);
+            }
+        }
+
+
+        // Example trigger: Press A button to make the arrow yellow for 1 second
+        if(bn::keypad::a_pressed() && !is_yellow)
+        {
+            arrow_palette.set_color(1, yellow_color); // Change arrow to yellow
+            flash_counter = 30;                        // 60 frames = 1 second
+            is_yellow = true;
+            if(menu_position_index == static_cast<int>(menu_options::inventory)){
+                menu_position_index = 0;
+                game_mode = INVENTORY;
+                menu_text_sprites.clear();
+                // menu_box.set_visible(false);
+                // reset arrow
+                // determine pagination values
+                // show up and down arrows
+            }
+        }
+
+        // Countdown timer logic
+        if(is_yellow)
+        {
+            flash_counter--;
+            if(flash_counter <= 0)
+            {
+                arrow_palette.set_color(1, arrow_original_color); // Restore original color
+                is_yellow = false;
             }
         }
 
