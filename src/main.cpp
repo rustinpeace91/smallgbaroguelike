@@ -68,6 +68,22 @@ void generate_inventory_menu_text(
 ){
     // paginate
     // DummyData::INVENTORY
+    //
+
+    int text_start_x = 55;
+    int text_start_y = 0;
+
+    int text_x = text_start_x;
+    int text_y = text_start_y;
+    for(int i =page_start; i< page_end and i < std::ssize(DummyData::INVENTORY); i++){
+        text_generator.generate(
+            text_x,
+            text_y,
+            bn::string_view(DummyData::INVENTORY[i]),
+            menu_text_sprites
+        );
+        text_y += 20;
+    }
 };
 
 int main()
@@ -92,6 +108,14 @@ int main()
     bn::sprite_ptr menu_box = bn::sprite_items::bg.create_sprite(0, 0);
     bn::sprite_ptr menu_arrow = bn::sprite_items::menuarrow.create_sprite(0,0);
 
+    bn::sprite_ptr up_arrow = bn::sprite_items::menuarrow.create_sprite(0, 0);
+    bn::sprite_ptr down_arrow = bn::sprite_items::menuarrow.create_sprite(0, 0);
+    up_arrow.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 1); 
+    down_arrow.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 3);
+    up_arrow.set_visible(false);
+    down_arrow.set_visible(false);
+
+
     bn::sprite_palette_ptr arrow_palette = menu_arrow.palette();
 
     // TURN ARROW YELLOW
@@ -108,9 +132,17 @@ int main()
     int arrow_reset = 0;
     int arrow_position_y = -20;
     int menu_position_index = 0;
+    bool up_arrow_visible = false;
+    bool down_arrow_visible = false;
     int menu_size = std::ssize(DummyData::MAIN_MENU_OPTIONS);
     bn::fixed horizontal_scale = bn::fixed(menu_width) / 64;
     bn::fixed vertical_scale = bn::fixed(menu_height) / 64;
+    up_arrow.set_x(bn::fixed(60));
+    up_arrow.set_y(bn::fixed(-10));
+    down_arrow.set_x(bn::fixed(60));
+    down_arrow.set_y(bn::fixed(72));
+    up_arrow.set_visible(false);
+    down_arrow.set_visible(false);
     menu_box.set_scale(horizontal_scale, vertical_scale);
     menu_box.set_position(0  + (120 -(menu_width/2)), 0 + (80 - (menu_height/2)));
     menu_box.set_visible(false);
@@ -118,40 +150,83 @@ int main()
     // MENU TEXT
     bn::vector<bn::sprite_ptr, 128> menu_text_sprites;
 
+    // INVENTORY SCROLLABLE STUFF
+    int max_page_size = 4;
+    int page_start = 0;
+    int page_end = 0;
+    int menu_item_total = 0;
+
 
     while(true)
     {
         if(bn::keypad::b_pressed()){
             if(game_mode == MOVE){
                 game_mode = MENU;
+                menu_text_sprites.clear();
                 generate_menu_text(text_generator, menu_text_sprites);
                 menu_box.set_visible(true);
                 menu_arrow.set_visible(true);
+                up_arrow.set_visible(false);
+                down_arrow.set_visible(false);
             } else {
                 // MAIN MENU
                 menu_position_index = 0;
                 game_mode = MOVE;
+                page_start = 0;
+                page_end = 0;
+                menu_item_total= 0;
                 menu_text_sprites.clear();
                 menu_box.set_visible(false);
                 menu_arrow.set_visible(false);
+                up_arrow.set_visible(false);
+                down_arrow.set_visible(false);
             }
         }
 
 
         // Example trigger: Press A button to make the arrow yellow for 1 second
-        if(bn::keypad::a_pressed() && !is_yellow)
+        if(bn::keypad::a_pressed() && !is_yellow && game_mode == MENU)
         {
             arrow_palette.set_color(1, yellow_color); // Change arrow to yellow
             flash_counter = 30;                        // 60 frames = 1 second
             is_yellow = true;
+            // OPEN INVENTORY OFR THE FIRST TIME
             if(menu_position_index == static_cast<int>(menu_options::inventory)){
                 menu_position_index = 0;
                 game_mode = INVENTORY;
                 menu_text_sprites.clear();
+
                 // menu_box.set_visible(false);
                 // reset arrow
+                // max_page_size = 0;
+                page_start = 0;
+                menu_item_total = std::ssize(DummyData::INVENTORY);
+                if(menu_item_total < max_page_size){
+                    page_end = menu_item_total;
+                } else {
+                    down_arrow.set_visible(true);
+                    page_end = max_page_size;
+                };
+                menu_text_sprites.clear();
+                generate_inventory_menu_text(
+                    text_generator,
+                    menu_text_sprites,
+                    page_start,
+                    page_end
+                );
+
                 // determine pagination values
-                // show up and down arrows
+                // HANDLE ARROW (TODO: remove reptition)
+                if(page_start > 0){
+                    up_arrow.set_visible(true);
+                } else {
+                    up_arrow.set_visible(false);
+                }
+                if(page_end < menu_item_total){
+                    down_arrow.set_visible(true);
+                } else {
+                    down_arrow.set_visible(false);
+                }
             }
         }
 
@@ -167,13 +242,89 @@ int main()
         }
 
         if(bn::keypad::up_pressed()){
+            if(game_mode == INVENTORY){
+                if(
+                    // scroll to end of menu, but more items
+                    (menu_position_index == 0) && 
+                    (page_start > 0)
+                ){
+                    page_start = page_start - max_page_size;
+                    if(menu_item_total < max_page_size){
+                        page_end = menu_item_total;
+                    } else { 
+                        page_end = page_start + max_page_size;
+                    };
+                    if(page_start < 0){page_start = 0;};
+                    menu_position_index = 0;
+                    menu_text_sprites.clear();
+                    generate_inventory_menu_text(
+                        text_generator,
+                        menu_text_sprites,
+                        page_start,
+                        page_end
+                    );
+
+                    // HANDLE ARROW (TODO: remove reptition)
+                    if(page_start > 0){
+                        up_arrow.set_visible(true);
+                    } else {
+                        up_arrow.set_visible(false);
+                    }
+                    if(page_end < menu_item_total){
+                        down_arrow.set_visible(true);
+                    } else {
+                        down_arrow.set_visible(false);
+                    }
+                }
+            }
             if(menu_position_index > 0){
                 menu_position_index--;
             }
         }
         if(bn::keypad::down_pressed()){
-            if(menu_position_index < menu_size - 1){
-                menu_position_index++;
+            if(game_mode == INVENTORY){
+                if(
+                    // scroll to end of menu, but more items
+                    (menu_position_index >= max_page_size - 1) && 
+                    (page_start + max_page_size < menu_item_total)
+                ){
+                    page_start = page_start + max_page_size;
+
+                    if(menu_item_total < page_start + max_page_size){
+                        page_end = menu_item_total;
+                    } else { 
+                        page_end = page_start + max_page_size;
+                    };
+                    menu_position_index = 0;
+                    menu_text_sprites.clear();
+                    generate_inventory_menu_text(
+                        text_generator,
+                        menu_text_sprites,
+                        page_start,
+                        page_end
+                    );
+                    // HANDLE ARROW (TODO: remove reptition)
+                    if(page_start > 0){
+                        up_arrow.set_visible(true);
+                    } else {
+                        up_arrow.set_visible(false);
+                    }
+                    if(page_end < menu_item_total){
+                        down_arrow.set_visible(true);
+                    } else {
+                        down_arrow.set_visible(false);
+                    }
+                } else {
+                    int current_page_size = page_end - page_start;
+                    if(menu_position_index < current_page_size - 1){
+                        menu_position_index++;
+                    }
+                }
+            } else {
+
+                if(menu_position_index < menu_size - 1){
+                    menu_position_index++;
+                }
             }
         }
         // info.update();

@@ -5,15 +5,15 @@ namespace DummyData {
         "Inventory", "Magic", "Equipment", "Options"
     };
     inline const char* INVENTORY[10] = {
-        "health potion",
-        "health potion",
-        "iron sword",
-        "magic crystal",
-        "iron helmet",
-        "iron shield",
-        "iron breastplace",
-        "iron chainpants",
-        "turkey leg",
+        "hlth ptn",
+        "hlth ptn",
+        "irn swd",
+        "mag crst",
+        "irn hlmt",
+        "irn shld",
+        "irn bst",
+        "irn pnt",
+        "turkey",
         "rat tail"
   };
 
