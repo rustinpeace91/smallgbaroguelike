@@ -116,7 +116,9 @@ public:
             player_dir_counter_ = increment_direction(player_dir_counter_, 1);
 
             debug_logger(player_dir_counter_);
-            dog_sprite_.set_rotation_angle(playerAngles[player_dir_counter_]);
+            // dog_sprite_.set_rotation_angle(playerAngles[player_dir_counter_]);
+            dog_sprite_.set_tiles(bn::sprite_items::knight.tiles_item(), player_dir_counter_); 
+
             // dog_sprite_.set_rotation_angle(90);
         }
         else if (bn::keypad::right_pressed())
@@ -125,7 +127,9 @@ public:
             player_dir_counter_ = increment_direction(player_dir_counter_, -1);
             // dog_sprite_.set_horizontal_flip(false);
             debug_logger(player_dir_counter_);
-            dog_sprite_.set_rotation_angle(playerAngles[player_dir_counter_]);
+            // dog_sprite_.set_rotation_angle(playerAngles[player_dir_counter_]);
+            dog_sprite_.set_tiles(bn::sprite_items::knight.tiles_item(), player_dir_counter_); 
+
         }
 
         if (bn::keypad::up_pressed())

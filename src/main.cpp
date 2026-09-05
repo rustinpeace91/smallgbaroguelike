@@ -11,7 +11,7 @@
 
 #include "bn_sprite_items_bg.h"
 #include "bn_sprite_items_dog.h"
-#include "bn_sprite_items_tinyarrow2.h"
+#include "bn_sprite_items_knight.h"
 #include "bn_sprite_items_menuarrow.h"
 #include "bn_regular_bg_items_map.h"
 
@@ -97,7 +97,8 @@ int main()
     // common::info info("Map collision", info_text_lines, text_generator);
 
     bn::regular_bg_ptr map_bg = bn::regular_bg_items::map.create_bg(0, 0);
-    bn::sprite_ptr dog_sprite = bn::sprite_items::tinyarrow2.create_sprite(0, 0);
+    bn::sprite_ptr dog_sprite = bn::sprite_items::knight.create_sprite(0, 0);
+    dog_sprite.set_scale(bn::fixed(0.85), bn::fixed(0.85));
     Movement movementInstance(map_bg, dog_sprite);
     
     //
