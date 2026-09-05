@@ -35,13 +35,13 @@ class Movement
 public:
     direction player_direction;
     coordinates current_coordinates;
-    int valid_tile_index;
-    int player_dir_counter;
-    bn::regular_bg_ptr map_bg;
-    bn::sprite_ptr dog_sprite;
-    bn::point dog_map_position;
-    bn::regular_bg_map_item map_item; 
-    bn::regular_bg_map_cell valid_map_cell;
+    int valid_tile_index_;
+    int player_dir_counter_;
+    bn::regular_bg_ptr map_bg_;
+    bn::sprite_ptr dog_sprite_;
+    bn::point dog_map_position_;
+    bn::regular_bg_map_item map_item_; 
+    bn::regular_bg_map_cell valid_map_cell_;
 
 
     Movement(bn::regular_bg_ptr &map_bg_param, bn::sprite_ptr &dog_sprite_param) :
