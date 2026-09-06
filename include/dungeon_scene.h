@@ -5,26 +5,26 @@
  * zlib License, see LICENSE file.
  */
 
-#ifndef DB_SCENE_H
-#define DB_SCENE_H
+#ifndef DUNGEON_SCENE_H
+#define DUNGEON_SCENE_H
 
 #include "bn_optional.h"
 
-namespace db
+namespace dungeon
 {
 
 enum class scene_type;
 
-class scene
+class Scene
 {
 
 public:
-    virtual ~scene() = default;
+    virtual ~Scene() = default;
 
     [[nodiscard]] virtual bn::optional<scene_type> update() = 0;
 
 protected:
-    scene() = default;
+    Scene() = default;
 };
 
 }
