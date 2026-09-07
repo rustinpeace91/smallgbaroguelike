@@ -17,10 +17,9 @@
 namespace dungeon
 {
 
-    Overworld::Overworld() :
-        Scene(),
-        map_bg_(bn::regular_bg_items::map.create_bg(0, 0)),
-        dog_sprite_(bn::sprite_items::knight.create_sprite(0, 0))
+    Overworld::Overworld() : Scene(),
+                             map_bg_(bn::regular_bg_items::map.create_bg(0, 0)),
+                             dog_sprite_(bn::sprite_items::knight.create_sprite(0, 0))
     {
         valid_tile_index_ =
             bn::regular_bg_map_cell_info(valid_map_cell_).tile_index();
