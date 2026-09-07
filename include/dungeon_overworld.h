@@ -41,14 +41,16 @@ namespace dungeon
         int player_dir_counter_ = 0;
         int valid_tile_index_ = 0;
 
-        bn::regular_bg_ptr map_bg_ = bn::regular_bg_items::map.create_bg(0, 0);
-        bn::sprite_ptr dog_sprite_ = bn::sprite_items::knight.create_sprite(0, 0);
+        bn::regular_bg_ptr map_bg_;
+        bn::sprite_ptr dog_sprite_;
 
         bn::point dog_map_position_ = bn::point(16, 16);
-        bn::regular_bg_map_item map_item_ = bn::regular_bg_items::map.map_item();
-        bn::regular_bg_map_cell valid_map_cell_ = map_item_.cell(0, 0);
+        bn::regular_bg_map_item map_item_;
+        bn::regular_bg_map_cell valid_map_cell_;
+
+        int increment_direction(int counter, int step);
+        coordinates genereate_new_playerdir(direction d, int movement);
+        void debug_logger(int x);
     };
 
 }
-
-#endif
