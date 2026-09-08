@@ -139,6 +139,9 @@ namespace dungeon
             new_dog_map_position.set_y(new_y);
             new_dog_map_position.set_x(new_x);
         }
+        if (bn::keypad::b_pressed()) {
+            return dungeon::scene_type::MENU
+        }
 
         bn::regular_bg_map_cell dog_map_cell =
             map_item_.cell(new_dog_map_position);

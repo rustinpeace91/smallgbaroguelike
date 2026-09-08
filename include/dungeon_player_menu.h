@@ -1,5 +1,5 @@
-#ifndef DUNGEON_MENU_H
-#define DUNGEON_MENU_H
+#ifndef DUNGEON_PLAYER_MENU_H
+#define DUNGEON_PLAYER_MENU_H
 
 #include "bn_core.h"
 #include "bn_keypad.h"
@@ -12,15 +12,15 @@
 
 namespace dungeon
 {
-
     class PlayerMenu : public Scene
     {
     public:
-        PlayerMenu(bn::sprite_text_generator);
+        PlayerMenu(bn::sprite_text_generator&);
         bn::optional<scene_type> update() override;
 
     private:
         bn::sprite_text_generator text_generator_;
+        bn::sprite_ptr menu_box_;
     };
 
 }

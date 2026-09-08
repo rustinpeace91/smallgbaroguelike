@@ -10,7 +10,7 @@
 
 #include "bn_common.h"
 
-namespace db
+namespace dungeon
 {
     enum class scene_type
     {
