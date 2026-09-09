@@ -6,6 +6,7 @@
 
 #include "bn_sprite_items_dog.h"
 #include "bn_sprite_items_tinyarrow2.h"
+#include "bn_sprite_items_knight.h"
 #include "bn_regular_bg_items_map.h"
 
 #include "common_info.h"

@@ -1,4 +1,5 @@
 #include "dungeon_overworld.h"
+#include "dungeon_scene_type.h"
 
 #include "bn_core.h"
 #include "bn_keypad.h"
@@ -19,7 +20,9 @@ namespace dungeon
 
     Overworld::Overworld() : Scene(),
                              map_bg_(bn::regular_bg_items::map.create_bg(0, 0)),
-                             dog_sprite_(bn::sprite_items::knight.create_sprite(0, 0))
+                             dog_sprite_(bn::sprite_items::knight.create_sprite(0, 0)),
+                             map_item_(bn::regular_bg_items::map.map_item()),
+                             valid_map_cell_(map_item_.cell(0, 0))
     {
         valid_tile_index_ =
             bn::regular_bg_map_cell_info(valid_map_cell_).tile_index();
@@ -140,7 +143,7 @@ namespace dungeon
             new_dog_map_position.set_x(new_x);
         }
         if (bn::keypad::b_pressed()) {
-            return dungeon::scene_type::MENU
+            return dungeon::scene_type::MENU;
         }
 
         bn::regular_bg_map_cell dog_map_cell =

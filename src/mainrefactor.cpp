@@ -4,11 +4,11 @@
 #include "bn_unique_ptr.h"
 #include "bn_sprite_text_generator.h"
 
-#include "scene_type.h"
 // #include "bn_sprite_text_generator.h"
 // #include "bn_regular_bg_map_cell_info.h"
 //
 #include "dungeon_scene.h"
+#include "dungeon_scene_type.h"
 #include "dungeon_overworld.h"
 #include "dungeon_player_menu.h"
 #include "common_variable_8x16_sprite_font.h"
@@ -22,8 +22,7 @@ int main()
     bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
     // assets end
     bn::unique_ptr<dungeon::Scene> scene(
-        // namespace aint working. sort it out
-        new dungeon::Overworld(text_generator);
+        new dungeon::Overworld()
     );
 
     bn::optional<dungeon::scene_type> next_scene = dungeon::scene_type::OVERWORLD;
@@ -43,7 +42,7 @@ int main()
                     scene.reset(new dungeon::Overworld());
                     break;
                 case dungeon::scene_type::MENU:
-                    scene.reset(new dungeon::PlayerMenu());
+                    scene.reset(new dungeon::PlayerMenu(text_generator));
                     break;
                 default:
                     break;

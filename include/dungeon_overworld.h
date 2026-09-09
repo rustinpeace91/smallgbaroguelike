@@ -4,10 +4,13 @@
 #include "bn_core.h"
 #include "bn_keypad.h"
 #include "bn_regular_bg_ptr.h"
+#include "bn_sprite_ptr.h"
+#include <bn_regular_bg_map_item.h>
 #include "bn_sprite_text_generator.h"
 #include "bn_regular_bg_map_cell_info.h"
 
 #include "dungeon_scene.h"
+#include "dungeon_scene_type.h"
 #include <array>
 
 namespace dungeon
@@ -54,3 +57,4 @@ namespace dungeon
     };
 
 }
+#endif

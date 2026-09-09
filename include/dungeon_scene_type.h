@@ -5,8 +5,8 @@
  * zlib License, see LICENSE file.
  */
 
-#ifndef DB_SCENE_TYPE_H
-#define DB_SCENE_TYPE_H
+#ifndef DUNGEON_SCENE_TYPE_H
+#define DUNGEON_SCENE_TYPE_H
 
 #include "bn_common.h"
 
