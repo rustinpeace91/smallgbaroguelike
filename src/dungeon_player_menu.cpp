@@ -1,4 +1,6 @@
 #include "dungeon_player_menu.h"
+#include "dungeon_scene_type.h"
+#include "bn_sprite_items_bg.h"
 
 namespace dungeon {
 
