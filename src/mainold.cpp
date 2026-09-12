@@ -2,19 +2,19 @@
 //  * Copyright (c) 2020-2026 Gustavo Valiente gustavo.valiente@protonmail.com
 //  * zlib License, see LICENSE file.
 //  */
-//
+
 // #include "bn_core.h"
 // #include "bn_keypad.h"
 // #include "bn_regular_bg_ptr.h"
 // #include "bn_sprite_text_generator.h"
 // #include "bn_regular_bg_map_cell_info.h"
-//
+
 // #include "bn_sprite_items_bg.h"
 // #include "bn_sprite_items_dog.h"
 // #include "bn_sprite_items_knight.h"
 // #include "bn_sprite_items_menuarrow.h"
 // #include "bn_regular_bg_items_map.h"
-//
+
 // #include "common_info.h"
 // #include "common_variable_8x16_sprite_font.h"
 // #include "bn_log.h"
@@ -23,12 +23,12 @@
 // #include "movement.h"
 // #include "duymmy_data.h"
 // #include "bn_sprite_palette_ptr.h"
-//
+
 // enum modes {
 //     MOVE, MENU, INVENTORY
 // };
-//
-//
+
+
 // modes game_mode = MOVE;
 // enum class menu_options
 // {
@@ -36,17 +36,17 @@
 //     options = 1,
 //     magic = 2
 // };
-//
+
 // void generate_menu_text(
 //     bn::sprite_text_generator& text_generator,
 //     bn::vector<bn::sprite_ptr, 128>& menu_text_sprites)
 // {
 //     int text_start_x = 55;
 //     int text_start_y = 0;
-//
+
 //     int text_x = text_start_x;
 //     int text_y = text_start_y;
-//
+
 //     for(const char* option : DummyData::MAIN_MENU_OPTIONS)
 //     {
 //         text_generator.generate(
@@ -55,11 +55,11 @@
 //             bn::string_view(option),
 //             menu_text_sprites
 //         );
-//
+
 //         text_y += 20;
 //     }
 // }
-//
+
 // void generate_inventory_menu_text(
 //     bn::sprite_text_generator& text_generator,
 //     bn::vector<bn::sprite_ptr, 128>& menu_text_sprites,
@@ -69,10 +69,10 @@
 //     // paginate
 //     // DummyData::INVENTORY
 //     //
-//
+
 //     int text_start_x = 55;
 //     int text_start_y = 0;
-//
+
 //     int text_x = text_start_x;
 //     int text_y = text_start_y;
 //     for(int i =page_start; i< page_end and i < std::ssize(DummyData::INVENTORY); i++){
@@ -85,22 +85,22 @@
 //         text_y += 20;
 //     }
 // };
-//
+
 // int main()
 // {
-//
-//
+
+
 //     bn::core::init();
-//
-//
+
+
 //     bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
 //     // common::info info("Map collision", info_text_lines, text_generator);
-//
+
 //     bn::regular_bg_ptr map_bg = bn::regular_bg_items::map.create_bg(0, 0);
 //     bn::sprite_ptr dog_sprite = bn::sprite_items::knight.create_sprite(0, 0);
 //     dog_sprite.set_scale(bn::fixed(0.85), bn::fixed(0.85));
 //     Movement movementInstance(map_bg, dog_sprite);
-//
+
 //     //
 //     //
 //     //
@@ -108,24 +108,24 @@
 //     // ARROW
 //     bn::sprite_ptr menu_box = bn::sprite_items::bg.create_sprite(0, 0);
 //     bn::sprite_ptr menu_arrow = bn::sprite_items::menuarrow.create_sprite(0,0);
-//
+
 //     bn::sprite_ptr up_arrow = bn::sprite_items::menuarrow.create_sprite(0, 0);
 //     bn::sprite_ptr down_arrow = bn::sprite_items::menuarrow.create_sprite(0, 0);
 //     up_arrow.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 1); 
 //     down_arrow.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 3);
 //     up_arrow.set_visible(false);
 //     down_arrow.set_visible(false);
-//
-//
+
+
 //     bn::sprite_palette_ptr arrow_palette = menu_arrow.palette();
-//
+
 //     // TURN ARROW YELLOW
 //     bn::color arrow_original_color = arrow_palette.colors()[1]; 
 //     bn::color yellow_color(31, 31, 0);
-//
+
 //     int flash_counter = 0;
 //     bool is_yellow = false;
-//
+
 //     // MENU BOX
 //     int menu_width = 75;
 //     int menu_height = 100;
@@ -146,17 +146,17 @@
 //     menu_box.set_scale(horizontal_scale, vertical_scale);
 //     menu_box.set_position(0  + (120 -(menu_width/2)), 0 + (80 - (menu_height/2)));
 //     menu_box.set_visible(false);
-//
+
 //     // MENU TEXT
 //     bn::vector<bn::sprite_ptr, 128> menu_text_sprites;
-//
+
 //     // INVENTORY SCROLLABLE STUFF
 //     int max_page_size = 4;
 //     int page_start = 0;
 //     int page_end = 0;
 //     int menu_item_total = 0;
-//
-//
+
+
 //     while(true)
 //     {
 //         if(bn::keypad::b_pressed()){
@@ -182,8 +182,8 @@
 //                 down_arrow.set_visible(false);
 //             }
 //         }
-//
-//
+
+
 //         // Example trigger: Press A button to make the arrow yellow for 1 second
 //         if(bn::keypad::a_pressed() && !is_yellow && game_mode == MENU)
 //         {
@@ -195,7 +195,7 @@
 //                 menu_position_index = 0;
 //                 game_mode = INVENTORY;
 //                 menu_text_sprites.clear();
-//
+
 //                 // menu_box.set_visible(false);
 //                 // reset arrow
 //                 // max_page_size = 0;
@@ -214,7 +214,7 @@
 //                     page_start,
 //                     page_end
 //                 );
-//
+
 //                 // determine pagination values
 //                 // HANDLE ARROW (TODO: remove reptition)
 //                 if(page_start > 0){
@@ -229,7 +229,7 @@
 //                 }
 //             }
 //         }
-//
+
 //         // Countdown timer logic
 //         if(is_yellow)
 //         {
@@ -240,7 +240,7 @@
 //                 is_yellow = false;
 //             }
 //         }
-//
+
 //         if(bn::keypad::up_pressed()){
 //             if(game_mode == INVENTORY){
 //                 if(
@@ -263,7 +263,7 @@
 //                         page_start,
 //                         page_end
 //                     );
-//
+
 //                     // HANDLE ARROW (TODO: remove reptition)
 //                     if(page_start > 0){
 //                         up_arrow.set_visible(true);
@@ -289,7 +289,7 @@
 //                     (page_start + max_page_size < menu_item_total)
 //                 ){
 //                     page_start = page_start + max_page_size;
-//
+
 //                     if(menu_item_total < page_start + max_page_size){
 //                         page_end = menu_item_total;
 //                     } else { 
@@ -321,7 +321,7 @@
 //                     }
 //                 }
 //             } else {
-//
+
 //                 if(menu_position_index < menu_size - 1){
 //                     menu_position_index++;
 //                 }

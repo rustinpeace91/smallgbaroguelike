@@ -26,7 +26,6 @@ int main()
     );
 
     bn::optional<dungeon::scene_type> next_scene = dungeon::scene_type::OVERWORLD;
-    int wait_frames = 0;
 
     while(true){
         if(scene){
