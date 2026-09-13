@@ -13,7 +13,7 @@
 
 #include "bn_log.h"
 #include "movement.h"
-#include "duymmy_data.h"
+#include "dummy_data.h"
 
 namespace dungeon
 {

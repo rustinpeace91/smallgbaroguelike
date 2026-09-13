@@ -1,4 +1,7 @@
 // constants.h
+
+#ifndef DUMMY_DATA_H
+#define DUMMY_DATA_H
 namespace DummyData {
     constexpr int ARRAY_SIZE = 4;   // Adjust the size as needed
     inline const char* MAIN_MENU_OPTIONS[ARRAY_SIZE] = {
@@ -18,3 +21,4 @@ namespace DummyData {
   };
 
 };
+#endif

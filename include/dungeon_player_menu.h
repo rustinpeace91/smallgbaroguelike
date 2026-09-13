@@ -36,7 +36,8 @@ namespace dungeon
         bn::sprite_ptr down_arrow_;
         bn::vector<bn::sprite_ptr, 64> menu_text_sprites_;
         menu_options menu_mode_;
-
+        bn::fixed horizontal_scale_;
+        bn::fixed vertical_scale_;
 
         int menu_size_;
         // TODO: make these constants
@@ -46,8 +47,7 @@ namespace dungeon
         int arrow_reset_ = 0;
         int arrow_position_y_ = -20;
         int menu_position_index_ = 0;
-        bn::fixed horizontal_scale_ = bn::fixed(menu_width_) / 64;
-        bn::fixed vertical_scale_ = bn::fixed(menu_height_) / 64;
+
 
         // INVENTORY SCROLLABLE STUFF
         int max_page_size_ = 4;
@@ -61,9 +61,9 @@ namespace dungeon
         );
         void handle_arrow_display();
 
-
-
+        void intiate_main_menu();
+        void generate_menu_text();
     };
 
-}
+}// namespace dungeon
 #endif
