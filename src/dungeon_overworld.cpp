@@ -1,5 +1,6 @@
 #include "dungeon_overworld.h"
 #include "dungeon_scene_type.h"
+#include "dungeon_game_state.h"
 
 #include "bn_core.h"
 #include "bn_keypad.h"
@@ -18,7 +19,8 @@
 namespace dungeon
 {
 
-    Overworld::Overworld() : Scene(),
+    Overworld::Overworld(dungeon::GameState& game_state) : Scene(),
+                             game_state_(game_state),
                              map_bg_(bn::regular_bg_items::map.create_bg(0, 0)),
                              dog_sprite_(bn::sprite_items::knight.create_sprite(0, 0)),
                              map_item_(bn::regular_bg_items::map.map_item()),
@@ -26,6 +28,14 @@ namespace dungeon
     {
         valid_tile_index_ =
             bn::regular_bg_map_cell_info(valid_map_cell_).tile_index();
+        dog_map_position_.set_x(game_state_.player.x);
+        dog_map_position_.set_y(game_state_.player.y);
+        BN_LOG("Current Value of X:");
+        BN_LOG(game_state_.player.x);
+        BN_LOG("Current Value of Y:");
+        BN_LOG(game_state_.player.y);
+
+
     }
     int Overworld::increment_direction(int counter, int step)
     {
@@ -79,6 +89,8 @@ namespace dungeon
     {
         BN_LOG("Current Value of X:");
         BN_LOG(x);
+        BN_LOG("Current Value of X:");
+
     }
 
     bn::optional<scene_type> Overworld::update()
@@ -90,7 +102,6 @@ namespace dungeon
             player_dir_counter_ =
                 increment_direction(player_dir_counter_, 1);
 
-            debug_logger(player_dir_counter_);
 
             dog_sprite_.set_tiles(
                 bn::sprite_items::knight.tiles_item(),
@@ -101,7 +112,6 @@ namespace dungeon
             player_dir_counter_ =
                 increment_direction(player_dir_counter_, -1);
 
-            debug_logger(player_dir_counter_);
 
             dog_sprite_.set_tiles(
                 bn::sprite_items::knight.tiles_item(),
@@ -167,6 +177,8 @@ namespace dungeon
             bn::fixed(map_item_.dimensions().height() * 4) +
             bn::fixed(4);
 
+        game_state_.player.x = dog_map_position_.x();
+        game_state_.player.y = dog_map_position_.y();
         dog_sprite_.set_position(dog_sprite_x, dog_sprite_y);
 
         return bn::nullopt;
