@@ -26,14 +26,27 @@ namespace dungeon
                              map_item_(bn::regular_bg_items::map.map_item()),
                              valid_map_cell_(map_item_.cell(0, 0))
     {
-        valid_tile_index_ =
-            bn::regular_bg_map_cell_info(valid_map_cell_).tile_index();
-        dog_map_position_.set_x(game_state_.player.x);
-        dog_map_position_.set_y(game_state_.player.y);
-        BN_LOG("Current Value of X:");
-        BN_LOG(game_state_.player.x);
-        BN_LOG("Current Value of Y:");
-        BN_LOG(game_state_.player.y);
+    valid_tile_index_ =
+        bn::regular_bg_map_cell_info(valid_map_cell_).tile_index();
+
+    dog_map_position_.set_x(game_state_.player.x);
+    dog_map_position_.set_y(game_state_.player.y);
+
+    dog_sprite_.set_tiles(
+        bn::sprite_items::knight.tiles_item(),
+        game_state_.player.facing_dir);
+
+    bn::fixed dog_sprite_x =
+        bn::fixed(dog_map_position_.x() * 8) -
+        bn::fixed(map_item_.dimensions().width() * 4) +
+        bn::fixed(4);
+
+    bn::fixed dog_sprite_y =
+        bn::fixed(dog_map_position_.y() * 8) -
+        bn::fixed(map_item_.dimensions().height() * 4) +
+        bn::fixed(4);
+
+    dog_sprite_.set_position(dog_sprite_x, dog_sprite_y);
 
 
     }
@@ -99,29 +112,29 @@ namespace dungeon
 
         if (bn::keypad::left_pressed())
         {
-            player_dir_counter_ =
-                increment_direction(player_dir_counter_, 1);
+            game_state_.player.facing_dir =
+                increment_direction(game_state_.player.facing_dir, 1);
 
 
             dog_sprite_.set_tiles(
                 bn::sprite_items::knight.tiles_item(),
-                player_dir_counter_);
+                game_state_.player.facing_dir);
         }
         else if (bn::keypad::right_pressed())
         {
-            player_dir_counter_ =
-                increment_direction(player_dir_counter_, -1);
+            game_state_.player.facing_dir =
+                increment_direction(game_state_.player.facing_dir, -1);
 
 
             dog_sprite_.set_tiles(
                 bn::sprite_items::knight.tiles_item(),
-                player_dir_counter_);
+                game_state_.player.facing_dir);
         }
 
         if (bn::keypad::up_pressed())
         {
             direction dir =
-                static_cast<direction>(player_dir_counter_);
+                static_cast<direction>(game_state_.player.facing_dir);
 
             coordinates new_movement =
                 genereate_new_playerdir(dir, 1);
@@ -138,7 +151,7 @@ namespace dungeon
         else if (bn::keypad::down_pressed())
         {
             direction dir =
-                static_cast<direction>(player_dir_counter_);
+                static_cast<direction>(game_state_.player.facing_dir);
 
             coordinates new_movement =
                 genereate_new_playerdir(dir, -1);

@@ -10,6 +10,7 @@ public:
     {
         int x=16;
         int y=16;
+        int facing_dir=0;
         // std::string map;
 
         // int hp;
