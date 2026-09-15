@@ -192,7 +192,8 @@ namespace dungeon
 
         game_state_.player.x = dog_map_position_.x();
         game_state_.player.y = dog_map_position_.y();
-        dog_sprite_.set_position(dog_sprite_x, dog_sprite_y);
+        // dog_sprite_.set_position(dog_sprite_x, dog_sprite_y);
+        map_bg_.set_position(0 - dog_sprite_x, 0 - dog_sprite_y);
 
         return bn::nullopt;
     }
