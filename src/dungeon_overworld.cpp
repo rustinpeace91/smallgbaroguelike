@@ -182,13 +182,13 @@ namespace dungeon
 
         bn::fixed dog_sprite_x =
             bn::fixed(dog_map_position_.x() * 8) -
-            bn::fixed(map_item_.dimensions().width() * 4) +
-            bn::fixed(4);
+            bn::fixed(map_item_.dimensions().width() * 4);
 
         bn::fixed dog_sprite_y =
             bn::fixed(dog_map_position_.y() * 8) -
-            bn::fixed(map_item_.dimensions().height() * 4) +
-            bn::fixed(4);
+            bn::fixed(map_item_.dimensions().height() * 4) - 
+            // this is just an offset just...wingin it!
+            bn::fixed(2);
 
         game_state_.player.x = dog_map_position_.x();
         game_state_.player.y = dog_map_position_.y();
