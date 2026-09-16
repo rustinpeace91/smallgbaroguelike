@@ -175,10 +175,14 @@ namespace dungeon
         int player_tile_index =
             bn::regular_bg_map_cell_info(player_map_cell).tile_index();
 
+        // TODO: do we need player_map_position_ anymore? 
         if (player_tile_index == valid_tile_index_)
         {
             player_map_position_ = new_player_map_position;
         }
+        // set internal game coordinates
+        game_state_.player.x = player_map_position_.x();
+        game_state_.player.y = player_map_position_.y();
 
         bn::fixed player_sprite_x =
             bn::fixed(player_map_position_.x() * 8) -
@@ -189,10 +193,10 @@ namespace dungeon
             bn::fixed(map_item_.dimensions().height() * 4) - 
             // this is just an offset just...wingin it!
             bn::fixed(2);
+        
 
-        game_state_.player.x = player_map_position_.x();
-        game_state_.player.y = player_map_position_.y();
         // player_sprite_.set_position(player_sprite_x, player_sprite_y);
+        // move map...or player (pick your poison) accordingly
         map_bg_.set_position(0 - player_sprite_x, 0 - player_sprite_y);
 
         return bn::nullopt;
