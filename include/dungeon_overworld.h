@@ -47,9 +47,9 @@ namespace dungeon
         int valid_tile_index_ = 0;
 
         bn::regular_bg_ptr map_bg_;
-        bn::sprite_ptr dog_sprite_;
+        bn::sprite_ptr player_sprite_;
 
-        bn::point dog_map_position_ = bn::point(16, 16);
+        bn::point player_map_position_ = bn::point(16, 16);
         bn::regular_bg_map_item map_item_;
         bn::regular_bg_map_cell valid_map_cell_;
 
