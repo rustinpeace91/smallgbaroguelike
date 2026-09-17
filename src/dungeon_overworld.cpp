@@ -22,31 +22,31 @@ namespace dungeon
     Overworld::Overworld(dungeon::GameState& game_state) : Scene(),
                              game_state_(game_state),
                              map_bg_(bn::regular_bg_items::map.create_bg(0, 0)),
-                             dog_sprite_(bn::sprite_items::knight.create_sprite(0, 0)),
+                             player_sprite_(bn::sprite_items::knight.create_sprite(0, 0)),
                              map_item_(bn::regular_bg_items::map.map_item()),
                              valid_map_cell_(map_item_.cell(0, 0))
     {
     valid_tile_index_ =
         bn::regular_bg_map_cell_info(valid_map_cell_).tile_index();
 
-    dog_map_position_.set_x(game_state_.player.x);
-    dog_map_position_.set_y(game_state_.player.y);
+    player_map_position_.set_x(game_state_.player.x);
+    player_map_position_.set_y(game_state_.player.y);
 
-    dog_sprite_.set_tiles(
+    player_sprite_.set_tiles(
         bn::sprite_items::knight.tiles_item(),
         game_state_.player.facing_dir);
 
-    bn::fixed dog_sprite_x =
-        bn::fixed(dog_map_position_.x() * 8) -
+    bn::fixed player_sprite_x =
+        bn::fixed(player_map_position_.x() * 8) -
         bn::fixed(map_item_.dimensions().width() * 4) +
         bn::fixed(4);
 
-    bn::fixed dog_sprite_y =
-        bn::fixed(dog_map_position_.y() * 8) -
+    bn::fixed player_sprite_y =
+        bn::fixed(player_map_position_.y() * 8) -
         bn::fixed(map_item_.dimensions().height() * 4) +
         bn::fixed(4);
 
-    dog_sprite_.set_position(dog_sprite_x, dog_sprite_y);
+    player_sprite_.set_position(player_sprite_x, player_sprite_y);
 
 
     }
@@ -108,7 +108,7 @@ namespace dungeon
 
     bn::optional<scene_type> Overworld::update()
     {
-        bn::point new_dog_map_position = dog_map_position_;
+        bn::point new_player_map_position = player_map_position_;
 
         if (bn::keypad::left_pressed())
         {
@@ -116,7 +116,7 @@ namespace dungeon
                 increment_direction(game_state_.player.facing_dir, 1);
 
 
-            dog_sprite_.set_tiles(
+            player_sprite_.set_tiles(
                 bn::sprite_items::knight.tiles_item(),
                 game_state_.player.facing_dir);
         }
@@ -126,7 +126,7 @@ namespace dungeon
                 increment_direction(game_state_.player.facing_dir, -1);
 
 
-            dog_sprite_.set_tiles(
+            player_sprite_.set_tiles(
                 bn::sprite_items::knight.tiles_item(),
                 game_state_.player.facing_dir);
         }
@@ -140,13 +140,13 @@ namespace dungeon
                 genereate_new_playerdir(dir, 1);
 
             int new_y =
-                new_dog_map_position.y() + new_movement.y;
+                new_player_map_position.y() + new_movement.y;
 
             int new_x =
-                new_dog_map_position.x() + new_movement.x;
+                new_player_map_position.x() + new_movement.x;
 
-            new_dog_map_position.set_y(new_y);
-            new_dog_map_position.set_x(new_x);
+            new_player_map_position.set_y(new_y);
+            new_player_map_position.set_x(new_x);
         }
         else if (bn::keypad::down_pressed())
         {
@@ -157,42 +157,47 @@ namespace dungeon
                 genereate_new_playerdir(dir, -1);
 
             int new_y =
-                new_dog_map_position.y() + new_movement.y;
+                new_player_map_position.y() + new_movement.y;
 
             int new_x =
-                new_dog_map_position.x() + new_movement.x;
+                new_player_map_position.x() + new_movement.x;
 
-            new_dog_map_position.set_y(new_y);
-            new_dog_map_position.set_x(new_x);
+            new_player_map_position.set_y(new_y);
+            new_player_map_position.set_x(new_x);
         }
         if (bn::keypad::b_pressed()) {
             return dungeon::scene_type::MENU;
         }
 
-        bn::regular_bg_map_cell dog_map_cell =
-            map_item_.cell(new_dog_map_position);
+        bn::regular_bg_map_cell player_map_cell =
+            map_item_.cell(new_player_map_position);
 
-        int dog_tile_index =
-            bn::regular_bg_map_cell_info(dog_map_cell).tile_index();
+        int player_tile_index =
+            bn::regular_bg_map_cell_info(player_map_cell).tile_index();
 
-        if (dog_tile_index == valid_tile_index_)
+        // TODO: do we need player_map_position_ anymore? 
+        if (player_tile_index == valid_tile_index_)
         {
-            dog_map_position_ = new_dog_map_position;
+            player_map_position_ = new_player_map_position;
         }
+        // set internal game coordinates
+        game_state_.player.x = player_map_position_.x();
+        game_state_.player.y = player_map_position_.y();
 
-        bn::fixed dog_sprite_x =
-            bn::fixed(dog_map_position_.x() * 8) -
-            bn::fixed(map_item_.dimensions().width() * 4) +
-            bn::fixed(4);
+        bn::fixed player_sprite_x =
+            bn::fixed(player_map_position_.x() * 8) -
+            bn::fixed(map_item_.dimensions().width() * 4);
 
-        bn::fixed dog_sprite_y =
-            bn::fixed(dog_map_position_.y() * 8) -
-            bn::fixed(map_item_.dimensions().height() * 4) +
-            bn::fixed(4);
+        bn::fixed player_sprite_y =
+            bn::fixed(player_map_position_.y() * 8) -
+            bn::fixed(map_item_.dimensions().height() * 4) - 
+            // this is just an offset just...wingin it!
+            bn::fixed(2);
+        
 
-        game_state_.player.x = dog_map_position_.x();
-        game_state_.player.y = dog_map_position_.y();
-        dog_sprite_.set_position(dog_sprite_x, dog_sprite_y);
+        // player_sprite_.set_position(player_sprite_x, player_sprite_y);
+        // move map...or player (pick your poison) accordingly
+        map_bg_.set_position(0 - player_sprite_x, 0 - player_sprite_y);
 
         return bn::nullopt;
     }
