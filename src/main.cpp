@@ -3,7 +3,7 @@
 #include "bn_keypad.h"
 #include "bn_unique_ptr.h"
 #include "bn_sprite_text_generator.h"
-
+#include "bn_sprites.h"
 // #include "bn_sprite_text_generator.h"
 // #include "bn_regular_bg_map_cell_info.h"
 //
@@ -19,7 +19,7 @@
 #include "bn_sprite_items_bg.h"
 #include "bn_sprite_items_menuarrow.h"
 #include "dummy_data.h"
-
+#include "bn_log.h"
 
 // generate_text("fuck you fuuuuu /n")
 
@@ -60,9 +60,14 @@ void update_textbox_text(
       {
       // input increases text index
       // clear text_generato
+
+        BN_LOG("Sprites used: ", bn::sprites::used_items_count());
+        BN_LOG("Sprites available: ", bn::sprites::available_items_count());
         text_index++;
         dialogue_text_sprites_.clear();
         is_text_updating = true;
+
+
       }
 
       // regenerate_text
@@ -98,7 +103,6 @@ int main()
     bn::vector<bn::sprite_ptr, 64> dialogue_text_sprites_;
 
     // move this out
-    int MAX_TEXT_LINES = 2;
     int text_index = 0;
     const bn::string_view* current_dialogue = nullptr;
     int dialogue_length = 0;
@@ -110,12 +114,14 @@ int main()
     menu_box_.set_x(bn::fixed(50));
     menu_box_.set_y(bn::fixed(45));
     menu_box_.set_visible(false);
+
     // ------- END TEXTBOX VARIABLES ------//
 
     while(true){
         // textbox setup
         if (bn::keypad::a_pressed() && !is_text_showing)
         {
+          BN_LOG("Sprites used: ", bn::sprites::used_items_count());
           static const bn::string_view test_dialogue[] = {
               "This is a dialogue",
               "Box example",
