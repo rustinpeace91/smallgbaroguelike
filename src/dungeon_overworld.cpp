@@ -195,9 +195,9 @@ namespace dungeon
             bn::fixed(2);
         
 
-        // player_sprite_.set_position(player_sprite_x, player_sprite_y);
+        player_sprite_.set_position(player_sprite_x, player_sprite_y);
         // move map...or player (pick your poison) accordingly
-        map_bg_.set_position(0 - player_sprite_x, 0 - player_sprite_y);
+        // map_bg_.set_position(0 - player_sprite_x, 0 - player_sprite_y);
 
         return bn::nullopt;
     }
