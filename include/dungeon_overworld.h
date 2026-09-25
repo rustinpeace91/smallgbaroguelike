@@ -12,6 +12,7 @@
 #include "dungeon_scene.h"
 #include "dungeon_scene_type.h"
 #include "dungeon_game_state.h"
+#include "dungeon_dialogue_menu.h"
 #include <array>
 
 namespace dungeon
@@ -36,11 +37,16 @@ namespace dungeon
     class Overworld : public Scene
     {
     public:
-        Overworld(dungeon::GameState& game_state);
+        Overworld(
+            dungeon::GameState& game_state,
+            bn::sprite_text_generator& text_generator
+        );
         bn::optional<scene_type> update() override;
 
     private:
         GameState& game_state_;
+        bn::sprite_text_generator& text_generator_;
+        DungeonDialogueMenu dialogue_menu_;
         direction player_direction = direction::east;
         coordinates current_coordinates{0, 0};
         int player_dir_counter_ = 0;

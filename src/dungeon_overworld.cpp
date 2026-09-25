@@ -19,8 +19,13 @@
 namespace dungeon
 {
 
-    Overworld::Overworld(dungeon::GameState& game_state) : Scene(),
+    Overworld::Overworld(
+        dungeon::GameState& game_state,
+        bn::sprite_text_generator& text_generator
+    ) : Scene(),
                              game_state_(game_state),
+                             text_generator_(text_generator),
+                             dialogue_menu_(text_generator),
                              map_bg_(bn::regular_bg_items::map.create_bg(0, 0)),
                              player_sprite_(bn::sprite_items::knight.create_sprite(0, 0)),
                              map_item_(bn::regular_bg_items::map.map_item()),
@@ -198,6 +203,8 @@ namespace dungeon
         player_sprite_.set_position(player_sprite_x, player_sprite_y);
         // move map...or player (pick your poison) accordingly
         // map_bg_.set_position(0 - player_sprite_x, 0 - player_sprite_y);
+        //
+        dialogue_menu_.update();
 
         return bn::nullopt;
     }
