@@ -11,6 +11,7 @@
 #include "dungeon_scene_type.h"
 #include "dungeon_overworld.h"
 #include "dungeon_player_menu.h"
+#include "dungeon_dialogue_menu.h"
 #include "dungeon_game_state.h"
 #include "common_variable_8x16_sprite_font.h"
 
@@ -21,68 +22,67 @@
 #include "dummy_data.h"
 #include "bn_log.h"
 
-// generate_text("fuck you fuuuuu /n")
 
-void update_textbox_text(
-  const bn::string_view text[],
-  int length,
-  bn::sprite_text_generator& text_generator_,
-  bn::vector<bn::sprite_ptr, 64>& dialogue_text_sprites_, // Fixed typo: vector holds sprite_ptr, not sprite_ptr&
-  int& text_index,            // Passed by reference
-  bool& is_text_showing,      // Passed by reference
-  bool& is_text_updating,      // Passed by reference
-  bn::sprite_ptr& menu_box_
-){
-  if(is_text_showing){
-    if(length > text_index){
-      // show text
-      if(is_text_updating){
-        text_generator_.generate(
-          bn::fixed(0), 
-          bn::fixed(40),
-          bn::string_view(text[text_index]),
-          dialogue_text_sprites_
-        );
-        menu_box_.set_visible(true);
-        // show next line if exists
-        if(length > text_index + 1){
-          text_generator_.generate(
-            bn::fixed(0),
-            bn::fixed(50),
-            bn::string_view(text[text_index + 1]),
-            dialogue_text_sprites_
-          );
-          text_index++;
-        }
-        is_text_updating = false;
-      }
-      else if (bn::keypad::a_pressed())
-      {
-      // input increases text index
-      // clear text_generato
-
-        BN_LOG("Sprites used: ", bn::sprites::used_items_count());
-        BN_LOG("Sprites available: ", bn::sprites::available_items_count());
-        text_index++;
-        dialogue_text_sprites_.clear();
-        is_text_updating = true;
-
-
-      }
-
-      // regenerate_text
-    } else {
-      dialogue_text_sprites_.clear();
-      text_index = 0;
-      // clear text_generator
-      //set isTextShowing to false
-      is_text_showing = false;
-      is_text_updating = false;
-      menu_box_.set_visible(false);
-    }
-    // clear menu box?
-  }
-}
+// void update_textbox_text(
+//   const bn::string_view text[],
+//   int length,
+//   bn::sprite_text_generator& text_generator_,
+//   bn::vector<bn::sprite_ptr, 64>& dialogue_text_sprites_, // Fixed typo: vector holds sprite_ptr, not sprite_ptr&
+//   int& text_index,            // Passed by reference
+//   bool& is_text_showing,      // Passed by reference
+//   bool& is_text_updating,      // Passed by reference
+//   bn::sprite_ptr& menu_box_
+// ){
+//   if(is_text_showing){
+//     if(length > text_index){
+//       // show text
+//       if(is_text_updating){
+//         text_generator_.generate(
+//           bn::fixed(0), 
+//           bn::fixed(40),
+//           bn::string_view(text[text_index]),
+//           dialogue_text_sprites_
+//         );
+//         menu_box_.set_visible(true);
+//         // show next line if exists
+//         if(length > text_index + 1){
+//           text_generator_.generate(
+//             bn::fixed(0),
+//             bn::fixed(50), 
+//             bn::string_view(text[text_index + 1]),
+//             dialogue_text_sprites_
+//           );
+//           text_index++;
+//         }
+//         is_text_updating = false;
+//       }
+//       else if (bn::keypad::a_pressed())
+//       {
+//       // input increases text index
+//       // clear text_generato
+//
+//         BN_LOG("Sprites used: ", bn::sprites::used_items_count());
+//         BN_LOG("Sprites available: ", bn::sprites::available_items_count());
+//         text_index++;
+//         dialogue_text_sprites_.clear();
+//         is_text_updating = true;
+//
+//
+//       }
+//
+//       // regenerate_text
+//     } else {
+//       dialogue_text_sprites_.clear();
+//       text_index = 0;
+//       // clear text_generator
+//       //set isTextShowing to false
+//       is_text_showing = false;
+//       is_text_updating = false;
+//       menu_box_.set_visible(false);
+//     }
+//     // clear menu box?
+//   }
+// }
 int main()
 {
     dungeon::GameState game_state;
@@ -97,51 +97,56 @@ int main()
     );
 
     bn::optional<dungeon::scene_type> next_scene = dungeon::scene_type::OVERWORLD;
+    // bn::sprite_ptr menu_box_ = bn::sprite_items::bg.create_sprite(0,0);
+    dungeon::DungeonDialogueMenu dialogue_menu = dungeon::DungeonDialogueMenu(
+      // menu_box_,
+      text_generator
+    );
 
     // ------TEXBOX VARIABLES------ MOVE TO CLASS
-    bn::sprite_items::bg.create_sprite(bn::fixed(0),bn::fixed(0)); 
-    bn::vector<bn::sprite_ptr, 64> dialogue_text_sprites_;
-
-    // move this out
-    int text_index = 0;
-    const bn::string_view* current_dialogue = nullptr;
-    int dialogue_length = 0;
-    bool is_text_showing = false;
-    // for typewriter effect later
-    bool is_text_updating = false;
-    bn::sprite_ptr menu_box_ = bn::sprite_items::bg.create_sprite(0,0);
-    menu_box_.set_scale(bn::fixed(125) / bn::fixed(64) , bn::fixed(25) / bn::fixed(64));
-    menu_box_.set_x(bn::fixed(50));
-    menu_box_.set_y(bn::fixed(45));
-    menu_box_.set_visible(false);
+    // bn::sprite_items::bg.create_sprite(bn::fixed(0),bn::fixed(0)); 
+    // bn::vector<bn::sprite_ptr, 64> dialogue_text_sprites_;
+    //
+    // // move this out
+    // int text_index = 0;
+    // const bn::string_view* current_dialogue = nullptr;
+    // int dialogue_length = 0;
+    // bool is_text_showing = false;
+    // // for typewriter effect later
+    // bool is_text_updating = false;
+    // bn::sprite_ptr menu_box_ = bn::sprite_items::bg.create_sprite(0,0);
+    // menu_box_.set_scale(bn::fixed(125) / bn::fixed(64) , bn::fixed(25) / bn::fixed(64));
+    // menu_box_.set_x(bn::fixed(50));
+    // menu_box_.set_y(bn::fixed(45));
+    // menu_box_.set_visible(false);
 
     // ------- END TEXTBOX VARIABLES ------//
 
     while(true){
         // textbox setup
-        if (bn::keypad::a_pressed() && !is_text_showing)
-        {
-          BN_LOG("Sprites used: ", bn::sprites::used_items_count());
-          static const bn::string_view test_dialogue[] = {
-              "This is a dialogue",
-              "Box example",
-              "This is what it do"
-          };
-          current_dialogue = test_dialogue;
-          dialogue_length = 3;
-          is_text_showing = true;
-          is_text_updating = true;
-        }
-        update_textbox_text(
-          current_dialogue,
-          dialogue_length,
-          text_generator,
-          dialogue_text_sprites_,
-          text_index,
-          is_text_showing,
-          is_text_updating,
-          menu_box_
-        );
+        // if (bn::keypad::a_pressed() && !is_text_showing)
+        // {
+        //   BN_LOG("Sprites used: ", bn::sprites::used_items_count());
+        //   static const bn::string_view test_dialogue[] = {
+        //       "This is a dialogue",
+        //       "Box example",
+        //       "This is what it do"
+        //   };
+        //   current_dialogue = test_dialogue;
+        //   dialogue_length = 3;
+        //   is_text_showing = true;
+        //   is_text_updating = true;
+        // }
+        // update_textbox_text(
+        //   current_dialogue,
+        //   dialogue_length,
+        //   text_generator,
+        //   dialogue_text_sprites_,
+        //   text_index,
+        //   is_text_showing,
+        //   is_text_updating,
+        //   menu_box_
+        // );
 
 
 
@@ -165,7 +170,7 @@ int main()
             }
             // smart pointer (?) owernship will change here
         }
-
+        dialogue_menu.update();
         bn::core::update();
     };
 

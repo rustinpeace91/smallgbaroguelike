@@ -6,7 +6,7 @@ namespace dungeon{
   {
     public:
       DungeonDialogueMenu(
-        bn::sprite_ptr& menu_box,
+        // bn::sprite_ptr& menu_box,
         bn::sprite_text_generator& text_generator
       );
       void update();
@@ -18,7 +18,7 @@ namespace dungeon{
       // // ------TEXBOX VARIABLES------ MOVE TO CLASS
       bn::vector<bn::sprite_ptr, 64> dialogue_text_sprites_;
       // // move this out
-      int text_index = 0;
+      int text_index_ = 0;
       const bn::string_view* current_dialogue_ = nullptr;
       int dialogue_length_ = 0;
       bool is_text_showing_ = false;
