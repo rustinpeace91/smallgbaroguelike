@@ -16,6 +16,27 @@
 #include "movement.h"
 #include "dummy_data.h"
 
+
+static bn::point calculate_sprite_position(
+    int x,
+    int y,
+    int map_dimensions_width,
+    int map_dimensions_height
+){
+    bn::fixed player_sprite_x =
+        bn::fixed(x * 8) -
+        bn::fixed(map_dimensions_width * 4) + 
+        bn::fixed(4);
+
+    bn::fixed player_sprite_y =
+        bn::fixed(y * 8) -
+        bn::fixed(map_dimensions_height * 4) - 
+        // this is just an offset just...wingin it!
+        bn::fixed(2);
+
+    return bn::point(player_sprite_x.integer(), player_sprite_y.integer());
+}
+
 namespace dungeon
 {
 
@@ -41,17 +62,18 @@ namespace dungeon
         bn::sprite_items::knight.tiles_item(),
         game_state_.player.facing_dir);
 
-    bn::fixed player_sprite_x =
-        bn::fixed(player_map_position_.x() * 8) -
-        bn::fixed(map_item_.dimensions().width() * 4) +
-        bn::fixed(4);
+    // player_sprite_.set_position(player_sprite_x, player_sprite_y);
 
-    bn::fixed player_sprite_y =
-        bn::fixed(player_map_position_.y() * 8) -
-        bn::fixed(map_item_.dimensions().height() * 4) +
-        bn::fixed(4);
+    // map_bg_.set_position(0 - player_sprite_x, 0 - player_sprite_y);
 
-    player_sprite_.set_position(player_sprite_x, player_sprite_y);
+    bn::point position = calculate_sprite_position(
+        player_map_position_.x(),
+        player_map_position_.y(),
+        map_item_.dimensions().width(),
+        map_item_.dimensions().height()
+    );
+
+    map_bg_.set_position(-position.x(), -position.y());
 
 
     }
@@ -110,6 +132,7 @@ namespace dungeon
         BN_LOG("Current Value of X:");
 
     }
+
 
     bn::optional<scene_type> Overworld::update()
     {
@@ -188,22 +211,16 @@ namespace dungeon
         // set internal game coordinates
         game_state_.player.x = player_map_position_.x();
         game_state_.player.y = player_map_position_.y();
-
-        bn::fixed player_sprite_x =
-            bn::fixed(player_map_position_.x() * 8) -
-            bn::fixed(map_item_.dimensions().width() * 4);
-
-        bn::fixed player_sprite_y =
-            bn::fixed(player_map_position_.y() * 8) -
-            bn::fixed(map_item_.dimensions().height() * 4) - 
-            // this is just an offset just...wingin it!
-            bn::fixed(2);
         
-
-        player_sprite_.set_position(player_sprite_x, player_sprite_y);
+        // player_sprite_.set_position(player_sprite_x, player_sprite_y);
         // move map...or player (pick your poison) accordingly
-        // map_bg_.set_position(0 - player_sprite_x, 0 - player_sprite_y);
-        //
+        bn::point offset = calculate_sprite_position(
+          player_map_position_.x(),
+          player_map_position_.y(),
+          map_item_.dimensions().width(),
+          map_item_.dimensions().height()
+        );
+        map_bg_.set_position(0 - offset.x(), 0 - offset.y());
         dialogue_menu_.update();
 
         return bn::nullopt;
