@@ -17,8 +17,14 @@ namespace dungeon{
       bn::sprite_text_generator text_generator_;
       // // ------TEXBOX VARIABLES------ MOVE TO CLASS
       bn::vector<bn::sprite_ptr, 64> dialogue_text_sprites_;
-      // // move this out
+
+      // typewriter logic
       int text_index_ = 0;
+      int line1_index_ = 0;
+      int line2_index_ = 0;
+      int frame_counter_ = 0;
+      int frame_speed_ = 5;
+
       const bn::string_view* current_dialogue_ = nullptr;
       int dialogue_length_ = 0;
       bool is_text_showing_ = false;
