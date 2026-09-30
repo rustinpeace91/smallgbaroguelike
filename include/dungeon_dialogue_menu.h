@@ -20,10 +20,11 @@ namespace dungeon{
 
       // typewriter logic
       int text_index_ = 0;
+      // TODO: Does not scale well
       int line1_index_ = 0;
       int line2_index_ = 0;
       int frame_counter_ = 0;
-      int frame_speed_ = 5;
+      int frame_speed_ = 2;
 
       const bn::string_view* current_dialogue_ = nullptr;
       int dialogue_length_ = 0;
