@@ -67,68 +67,108 @@ namespace dungeon{
         if(!is_text_updating_)
         {
             // Is the current page the last page?
-            if(text_index_ + 2 >= dialogue_length_)
+            if(text_line_index_ + number_of_lines_ >= dialogue_length_)
             {
                 dialogue_text_sprites_.clear();
-                text_index_ = 0;                
-                line1_index_ = 0;
-                line2_index_ = 0;
+                text_line_index_ = 0;
                 is_text_showing_ = false;
                 is_text_updating_ = false;
                 menu_box_.set_visible(false);
+                frame_counter_ = 0;
+                current_textbox_index_ = 0;
             }
             else
             {
-                text_index_ += 2;
+                text_line_index_ += number_of_lines_;
                 dialogue_text_sprites_.clear();
                 is_text_updating_ = true;
-
-                line1_index_ = 0;
-                line2_index_ = 0;
                 frame_counter_ = 0;
+                current_textbox_index_ = 0;
             }
         }
       }
     }
 
     // End of A press (stupid text editor)
-    if(is_text_updating_ && text_index_ < dialogue_length_){
-
-        frame_counter_++;
-        // handle all update logic here
-        if(frame_counter_ % frame_speed_ == 0){
-          if(line1_index_ < current_dialogue_[text_index_].length()){
-            line1_index_++;
-          } else if(
-            dialogue_length_ > text_index_ + 1 &&
-            line2_index_ < current_dialogue_[text_index_ + 1].length()
-          ){
-            line2_index_++;
-          } else {
-            is_text_updating_ = false;
-          }
-        }
-        // just print the text
-        // clear previous text?
+      
+    if(is_text_updating_ && text_line_index_ < dialogue_length_){
+      frame_counter_++;
+      if(frame_counter_ % frame_speed_ == 0){
+        // clear out old sprites 
         dialogue_text_sprites_.clear();
-        text_generator_.generate(
-          bn::fixed(0), 
-          bn::fixed(40),
-          bn::string_view(current_dialogue_[text_index_].substr(0, line1_index_)),
-          dialogue_text_sprites_
-        );
-        // do we need this? think 
-        menu_box_.set_visible(true);
-        if(dialogue_length_ > text_index_ + 1){
-          text_generator_.generate(
-            bn::fixed(0),
-            bn::fixed(50), 
-            bn::string_view(current_dialogue_[text_index_ + 1].substr(0, line2_index_)),
-            dialogue_text_sprites_
-          );
-          // text_index_++;
-        }
+        current_textbox_index_++;
+        int characters_remaining = current_textbox_index_; 
+        for(int i = 0; i < number_of_lines_; i++){
+          // are we on the last page?
+          if(text_line_index_ + i > current_dialogue_.length()){
+            is_text_updating_ = false;
+            // next A press will clear the page
+            break;
+          } else if(
+            characters_remaining > current_dialogue_[text_line_index_ + i].length()
+          ) {
+            // if current_line_index_ is greater than length of line, print whole line
+            text_generator_.generate(
+              bn::fixed(0),
+              bn::fixed(50 + i * 10), 
+              current_dialogue_[text_line_index_ + i],
+              dialogue_text_sprites_
+            );
+            characters_remaining -= current_dialogue_[text_line_index_ + i].length();
 
+          } else {  
+            text_generator_.generate(
+              bn::fixed(0),
+              bn::fixed(50 + i * 10), 
+              current_dialogue_[text_line_index_ + i].substr(
+                0,
+                characters_remaining
+              ),
+              dialogue_text_sprites_
+            );
+          };
+        }
+      }
     }
+
+
+    // if(is_text_updating_ && text_index_ < dialogue_length_){
+    //
+    //     frame_counter_++;
+    //     // handle all update logic here
+    //     if(frame_counter_ % frame_speed_ == 0){
+    //       if(line1_index_ < current_dialogue_[text_index_].length()){
+    //         line1_index_++;
+    //       } else if(
+    //         dialogue_length_ > text_index_ + 1 &&
+    //         line2_index_ < current_dialogue_[text_index_ + 1].length()
+    //       ){
+    //         line2_index_++;
+    //       } else {
+    //         is_text_updating_ = false;
+    //       }
+    //     }
+    //     // just print the text
+    //     // clear previous text?
+    //     dialogue_text_sprites_.clear();
+        // text_generator_.generate(
+        //   bn::fixed(0), 
+        //   bn::fixed(40),
+        //   bn::string_view(current_dialogue_[text_index_].substr(0, line1_index_)),
+        //   dialogue_text_sprites_
+        // );
+    //     // do we need this? think 
+    //     menu_box_.set_visible(true);
+    //     if(dialogue_length_ > text_index_ + 1){
+          // text_generator_.generate(
+          //   bn::fixed(0),
+          //   bn::fixed(50), 
+          //   bn::string_view(current_dialogue_[text_index_ + 1].substr(0, line2_index_)),
+          //   dialogue_text_sprites_
+          // );
+    //       // text_index_++;
+    //     }
+    //
+    // }
   }
 }
