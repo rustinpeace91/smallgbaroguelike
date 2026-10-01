@@ -48,22 +48,6 @@ namespace dungeon{
         is_text_updating_ = true;
         menu_box_.set_visible(true);
       } else {
-        // on button press check if dialogue needs to be closed
-        //
-        //
-        // Typewriter logic
-        // int text_index = 0;
-        // int line1_index
-        // int line2_index
-        // if(line1_index < line1.length())
-        //  only print first line logic
-        // else 
-        //  print all of first line and index on second line
-        //  if(line2_index < line2.length)
-        //    is_text_updating = false
-        //    button can be pressed again
-        //      on button press: text_index +=2?
-        //
         if(!is_text_updating_)
         {
             // Is the current page the last page?
@@ -100,7 +84,7 @@ namespace dungeon{
         int characters_remaining = current_textbox_index_; 
         for(int i = 0; i < number_of_lines_; i++){
           // are we on the last page?
-          if(text_line_index_ + i > current_dialogue_.length()){
+          if(text_line_index_ + i > dialogue_length_){
             is_text_updating_ = false;
             // next A press will clear the page
             break;
@@ -110,7 +94,7 @@ namespace dungeon{
             // if current_line_index_ is greater than length of line, print whole line
             text_generator_.generate(
               bn::fixed(0),
-              bn::fixed(50 + i * 10), 
+              bn::fixed(40 + i * 10), 
               current_dialogue_[text_line_index_ + i],
               dialogue_text_sprites_
             );
@@ -119,7 +103,7 @@ namespace dungeon{
           } else {  
             text_generator_.generate(
               bn::fixed(0),
-              bn::fixed(50 + i * 10), 
+              bn::fixed(40 + i * 10), 
               current_dialogue_[text_line_index_ + i].substr(
                 0,
                 characters_remaining
@@ -130,45 +114,5 @@ namespace dungeon{
         }
       }
     }
-
-
-    // if(is_text_updating_ && text_index_ < dialogue_length_){
-    //
-    //     frame_counter_++;
-    //     // handle all update logic here
-    //     if(frame_counter_ % frame_speed_ == 0){
-    //       if(line1_index_ < current_dialogue_[text_index_].length()){
-    //         line1_index_++;
-    //       } else if(
-    //         dialogue_length_ > text_index_ + 1 &&
-    //         line2_index_ < current_dialogue_[text_index_ + 1].length()
-    //       ){
-    //         line2_index_++;
-    //       } else {
-    //         is_text_updating_ = false;
-    //       }
-    //     }
-    //     // just print the text
-    //     // clear previous text?
-    //     dialogue_text_sprites_.clear();
-        // text_generator_.generate(
-        //   bn::fixed(0), 
-        //   bn::fixed(40),
-        //   bn::string_view(current_dialogue_[text_index_].substr(0, line1_index_)),
-        //   dialogue_text_sprites_
-        // );
-    //     // do we need this? think 
-    //     menu_box_.set_visible(true);
-    //     if(dialogue_length_ > text_index_ + 1){
-          // text_generator_.generate(
-          //   bn::fixed(0),
-          //   bn::fixed(50), 
-          //   bn::string_view(current_dialogue_[text_index_ + 1].substr(0, line2_index_)),
-          //   dialogue_text_sprites_
-          // );
-    //       // text_index_++;
-    //     }
-    //
-    // }
   }
 }
