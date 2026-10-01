@@ -64,25 +64,29 @@ namespace dungeon{
         //    button can be pressed again
         //      on button press: text_index +=2?
         //
-        if(!is_text_updating_){
-          if(text_index_ >= dialogue_length_){
-            dialogue_text_sprites_.clear();
-            text_index_ = 0;
-            // clear text_generator
-            //set isTextShowing to false
-            is_text_showing_ = false;
-            is_text_updating_ = false;
-            menu_box_.set_visible(false);
-          } else {
-            BN_LOG("Sprites used: ", bn::sprites::used_items_count());
-            BN_LOG("Sprites available: ", bn::sprites::available_items_count());
-            text_index_ = text_index_ + 2;
-            dialogue_text_sprites_.clear();
-            is_text_updating_ = true;
-          }
-          // reset typewriter
-          line1_index_ = 0;
-          line2_index_ = 0;
+        if(!is_text_updating_)
+        {
+            // Is the current page the last page?
+            if(text_index_ + 2 >= dialogue_length_)
+            {
+                dialogue_text_sprites_.clear();
+                text_index_ = 0;                
+                line1_index_ = 0;
+                line2_index_ = 0;
+                is_text_showing_ = false;
+                is_text_updating_ = false;
+                menu_box_.set_visible(false);
+            }
+            else
+            {
+                text_index_ += 2;
+                dialogue_text_sprites_.clear();
+                is_text_updating_ = true;
+
+                line1_index_ = 0;
+                line2_index_ = 0;
+                frame_counter_ = 0;
+            }
         }
       }
     }
