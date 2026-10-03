@@ -22,9 +22,9 @@ namespace dungeon{
     
     // bn::sprite_items::bg.create_sprite(bn::fixed(0),bn::fixed(0)); 
     // menu_box_ = bn::sprite_items::bg.create_sprite(0,0);
-    menu_box_.set_scale(bn::fixed(125) / bn::fixed(64) , bn::fixed(25) / bn::fixed(64));
-    menu_box_.set_x(bn::fixed(50));
-    menu_box_.set_y(bn::fixed(45));
+    menu_box_.set_scale(bn::fixed(menu_box_width_) / bn::fixed(64) , bn::fixed(menu_box_height_) / bn::fixed(64));
+    menu_box_.set_x(bn::fixed(menu_box_position_x_));
+    menu_box_.set_y(bn::fixed(menu_box_position_y_));
     menu_box_.set_visible(false);
   }
 
@@ -36,6 +36,7 @@ namespace dungeon{
       if(!is_text_showing_){
 
         BN_LOG("Sprites used: ", bn::sprites::used_items_count());
+        /// TODO: move this outta hea
         static const bn::string_view test_dialogue[] = {
             "This is dialogue",
             "Box example",
@@ -90,8 +91,8 @@ namespace dungeon{
             //type full line
 
             text_generator_.generate(
-              bn::fixed(0),
-              bn::fixed(40 + i * 10), 
+              bn::fixed(text_start_x_),
+              bn::fixed(text_start_y_ + i * text_spacing_), 
               current_dialogue_[text_line_index_ + i],
               dialogue_text_sprites_
             );
@@ -102,8 +103,8 @@ namespace dungeon{
             bn:: string_view current_line_string = current_dialogue_[text_line_index_ + i];
             // type substring of line
             text_generator_.generate(
-              bn::fixed(0),
-              bn::fixed(40 + i * 10), 
+              bn::fixed(text_start_x_),
+              bn::fixed(text_start_y_ + i * text_spacing_), 
               current_line_string.substr(
                 0,
                 current_page_line_character_
