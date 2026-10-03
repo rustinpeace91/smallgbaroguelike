@@ -33,7 +33,7 @@
 #---------------------------------------------------------------------------------------------------------------------
 TARGET      	:=  $(notdir $(CURDIR))
 BUILD       	:=  build
-LIBBUTANO   	:=  ../butano/butano
+LIBBUTANO   	:=  ../gba/butano/butano
 PYTHON      	:=  python
 SOURCES     	:=  src
 INCLUDES    	:=  include
@@ -60,8 +60,8 @@ EXTTOOL     	:=
 #---------------------------------------------------------------------------------------------------------------------
 # Export absolute butano path:
 #---------------------------------------------------------------------------------------------------------------------
-ifndef LIBBUTANOLABS
-	export LIBBUTANOLABS	:=	$(realpath $(LIBBUTANO))
+ifndef LIBBUTANOABS
+	export LIBBUTANOABS	:=	$(realpath $(LIBBUTANO))
 endif
 
 #---------------------------------------------------------------------------------------------------------------------

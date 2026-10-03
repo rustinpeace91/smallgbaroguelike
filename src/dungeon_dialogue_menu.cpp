@@ -48,87 +48,86 @@ namespace dungeon{
         is_text_updating_ = true;
         menu_box_.set_visible(true);
       } else {
-        // on button press check if dialogue needs to be closed
-        //
-        //
-        // Typewriter logic
-        // int text_index = 0;
-        // int line1_index
-        // int line2_index
-        // if(line1_index < line1.length())
-        //  only print first line logic
-        // else 
-        //  print all of first line and index on second line
-        //  if(line2_index < line2.length)
-        //    is_text_updating = false
-        //    button can be pressed again
-        //      on button press: text_index +=2?
-        //
         if(!is_text_updating_)
         {
             // Is the current page the last page?
-            if(text_index_ + 2 >= dialogue_length_)
+            if(text_line_index_ + number_of_lines_ >= dialogue_length_)
             {
                 dialogue_text_sprites_.clear();
-                text_index_ = 0;                
-                line1_index_ = 0;
-                line2_index_ = 0;
+                text_line_index_ = 0;
                 is_text_showing_ = false;
                 is_text_updating_ = false;
                 menu_box_.set_visible(false);
+                frame_counter_ = 0;
+                current_page_line_character_ = 0;
+                current_page_line_typing_ = 0;
             }
             else
             {
-                text_index_ += 2;
+                text_line_index_ += number_of_lines_;
                 dialogue_text_sprites_.clear();
                 is_text_updating_ = true;
-
-                line1_index_ = 0;
-                line2_index_ = 0;
                 frame_counter_ = 0;
+                current_page_line_character_ = 0;
+                current_page_line_typing_ = 0;
             }
         }
       }
     }
 
     // End of A press (stupid text editor)
-    if(is_text_updating_ && text_index_ < dialogue_length_){
 
-        frame_counter_++;
-        // handle all update logic here
-        if(frame_counter_ % frame_speed_ == 0){
-          if(line1_index_ < current_dialogue_[text_index_].length()){
-            line1_index_++;
-          } else if(
-            dialogue_length_ > text_index_ + 1 &&
-            line2_index_ < current_dialogue_[text_index_ + 1].length()
-          ){
-            line2_index_++;
-          } else {
-            is_text_updating_ = false;
-          }
-        }
-        // just print the text
-        // clear previous text?
+    if(is_text_updating_ && text_line_index_ < dialogue_length_){
+      frame_counter_++;
+      if(frame_counter_ % frame_speed_ == 0){
+        // clear out old sprites
         dialogue_text_sprites_.clear();
-        text_generator_.generate(
-          bn::fixed(0), 
-          bn::fixed(40),
-          bn::string_view(current_dialogue_[text_index_].substr(0, line1_index_)),
-          dialogue_text_sprites_
-        );
-        // do we need this? think 
-        menu_box_.set_visible(true);
-        if(dialogue_length_ > text_index_ + 1){
-          text_generator_.generate(
-            bn::fixed(0),
-            bn::fixed(50), 
-            bn::string_view(current_dialogue_[text_index_ + 1].substr(0, line2_index_)),
-            dialogue_text_sprites_
-          );
-          // text_index_++;
-        }
+        for(int i=0; i < number_of_lines_; i++){
+          if(
+              text_line_index_ + i < dialogue_length_ &&
+              i < current_page_line_typing_
+          ){
+            //type full line
 
+            text_generator_.generate(
+              bn::fixed(0),
+              bn::fixed(40 + i * 10), 
+              current_dialogue_[text_line_index_ + i],
+              dialogue_text_sprites_
+            );
+          } else if (
+            text_line_index_ + i < dialogue_length_ &&
+            i == current_page_line_typing_
+          ){
+            bn:: string_view current_line_string = current_dialogue_[text_line_index_ + i];
+            // type substring of line
+            text_generator_.generate(
+              bn::fixed(0),
+              bn::fixed(40 + i * 10), 
+              current_line_string.substr(
+                0,
+                current_page_line_character_
+              ),
+              dialogue_text_sprites_
+            );
+            current_page_line_character_++;
+            // check if we need to advance line
+            if(
+              current_page_line_character_ > current_line_string.length()
+            ){
+              current_page_line_character_ = 0;
+              current_page_line_typing_++;
+              // check if we need to advance page
+              if(current_page_line_typing_ >= number_of_lines_ || text_line_index_ + current_page_line_typing_ >= dialogue_length_){
+                is_text_updating_=false;
+                // will stop text from updating and prompt for A press
+                // which will determine to move onto next page or close box
+                break;
+              }
+            }
+          } 
+        }
+      }
     }
   }
 }
