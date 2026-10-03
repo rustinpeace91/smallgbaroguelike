@@ -48,6 +48,8 @@ namespace dungeon
         int arrow_position_y_ = -20;
         int menu_position_index_ = 0;
 
+        int text_start_x_ = 55;
+        int text_start_y_ = 0;
 
         // INVENTORY SCROLLABLE STUFF
         int max_page_size_ = 4;

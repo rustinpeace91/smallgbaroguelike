@@ -47,7 +47,6 @@ PlayerMenu::PlayerMenu(bn::sprite_text_generator& text_generator)
 }
 
 void PlayerMenu::generate_inventory_menu_text(
-
     int page_start,
     int page_end
 ){
@@ -55,11 +54,9 @@ void PlayerMenu::generate_inventory_menu_text(
     // DummyData::INVENTORY
     //
 
-    int text_start_x = 55;
-    int text_start_y = 0;
 
-    int text_x = text_start_x;
-    int text_y = text_start_y;
+    int text_x = text_start_x_;
+    int text_y = text_start_y_;
     for(int i =page_start; i< page_end and i < std::ssize(DummyData::INVENTORY); i++){
         text_generator_.generate(
             text_x,
@@ -74,11 +71,9 @@ void PlayerMenu::generate_inventory_menu_text(
 
 void PlayerMenu::generate_menu_text()
 {
-    int text_start_x = 55;
-    int text_start_y = 0;
 
-    int text_x = text_start_x;
-    int text_y = text_start_y;
+    int text_x = text_start_x_;
+    int text_y = text_start_y_;
 
     for(const char* option : DummyData::MAIN_MENU_OPTIONS)
     {
