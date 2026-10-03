@@ -59,7 +59,8 @@ namespace dungeon{
                 is_text_updating_ = false;
                 menu_box_.set_visible(false);
                 frame_counter_ = 0;
-                current_textbox_index_ = 0;
+                current_page_line_character_ = 0;
+                current_page_line_typing_ = 0;
             }
             else
             {
@@ -67,50 +68,65 @@ namespace dungeon{
                 dialogue_text_sprites_.clear();
                 is_text_updating_ = true;
                 frame_counter_ = 0;
-                current_textbox_index_ = 0;
+                current_page_line_character_ = 0;
+                current_page_line_typing_ = 0;
             }
         }
       }
     }
 
     // End of A press (stupid text editor)
-      
+
     if(is_text_updating_ && text_line_index_ < dialogue_length_){
       frame_counter_++;
       if(frame_counter_ % frame_speed_ == 0){
-        // clear out old sprites 
+        // clear out old sprites
         dialogue_text_sprites_.clear();
-        current_textbox_index_++;
-        int characters_remaining = current_textbox_index_; 
-        for(int i = 0; i < number_of_lines_; i++){
-          // are we on the last page?
-          if(text_line_index_ + i > dialogue_length_){
-            is_text_updating_ = false;
-            // next A press will clear the page
-            break;
-          } else if(
-            characters_remaining > current_dialogue_[text_line_index_ + i].length()
-          ) {
-            // if current_line_index_ is greater than length of line, print whole line
+        for(int i=0; i < number_of_lines_; i++){
+          if(
+              text_line_index_ + i < dialogue_length_ &&
+              i < current_page_line_typing_
+          ){
+            //type full line
+
             text_generator_.generate(
               bn::fixed(0),
               bn::fixed(40 + i * 10), 
               current_dialogue_[text_line_index_ + i],
               dialogue_text_sprites_
             );
-            characters_remaining -= current_dialogue_[text_line_index_ + i].length();
-
-          } else {  
+          } else if (
+            text_line_index_ + i < dialogue_length_ &&
+            i == current_page_line_typing_
+          ){
+            bn:: string_view current_line_string = current_dialogue_[text_line_index_ + i];
+            // type substring of line
             text_generator_.generate(
               bn::fixed(0),
               bn::fixed(40 + i * 10), 
-              current_dialogue_[text_line_index_ + i].substr(
+              current_line_string.substr(
                 0,
-                characters_remaining
+                current_page_line_character_
               ),
               dialogue_text_sprites_
             );
-          };
+            current_page_line_character_++;
+            // check if we need to advance line
+            if(
+              current_page_line_character_ >= current_line_string.length()
+            ){
+              current_page_line_character_ = 0;
+              current_page_line_typing_++;
+              // check if we need to advance page
+              if(current_page_line_typing_ >= number_of_lines_ || text_line_index_ + current_page_line_typing_ >= dialogue_length_){
+                is_text_updating_=false;
+                // should break out of the for loop. right?
+                // will stop text from updating and prompt for A press
+                // which will determine to move onto next page or close box
+                break;
+              }
+            }
+          } 
         }
       }
     }

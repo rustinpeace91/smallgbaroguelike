@@ -20,7 +20,9 @@ namespace dungeon{
 
       // typewriter logic
       int text_line_index_ = 0;
-      int current_textbox_index_=0;
+      int current_page_line_character_ = 0;
+      int current_page_line_typing_ = 0;
+      
       // make a configurable variable 
       int number_of_lines_ = 2;
       // TODO: Does not scale well
