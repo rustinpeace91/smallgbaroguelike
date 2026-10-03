@@ -113,14 +113,13 @@ namespace dungeon{
             current_page_line_character_++;
             // check if we need to advance line
             if(
-              current_page_line_character_ >= current_line_string.length()
+              current_page_line_character_ > current_line_string.length()
             ){
               current_page_line_character_ = 0;
               current_page_line_typing_++;
               // check if we need to advance page
               if(current_page_line_typing_ >= number_of_lines_ || text_line_index_ + current_page_line_typing_ >= dialogue_length_){
                 is_text_updating_=false;
-                // should break out of the for loop. right?
                 // will stop text from updating and prompt for A press
                 // which will determine to move onto next page or close box
                 break;

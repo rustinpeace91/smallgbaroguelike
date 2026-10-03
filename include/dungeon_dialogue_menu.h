@@ -25,17 +25,12 @@ namespace dungeon{
       
       // make a configurable variable 
       int number_of_lines_ = 2;
-      // TODO: Does not scale well
-      // int line1_index_ = 0;
-      // int line2_index_ = 0;
-      //
       int frame_counter_ = 0;
       int frame_speed_ = 2;
 
       const bn::string_view* current_dialogue_ = nullptr;
       int dialogue_length_ = 0;
       bool is_text_showing_ = false;
-      // // for typewriter effect later
       bool is_text_updating_ = false;
       // bn::sprite_items::bg.create_sprite(bn::fixed(0),bn::fixed(0)); 
       // bn::sprite_ptr menu_box_ = bn::sprite_items::bg.create_sprite(0,0);
