@@ -43,14 +43,15 @@ namespace dungeon
         // TODO: make these constants
         int menu_width_ = 75;
         int menu_height_ = 100;
-        int menu_start_x_ = 120;
+        // int menu_start_x_ = 120;
+        int menu_start_x_ = -40;
         int menu_start_y_ = 80;
-        int arrow_position_x_ = 50;
+        int arrow_position_x_ = -110;
         int arrow_reset_ = 0;
         int arrow_position_y_ = -20;
         int menu_position_index_ = 0;
 
-        int text_start_x_ = 55;
+        int text_start_x_ = -105;
         int text_start_y_ = 0;
 
         // INVENTORY SCROLLABLE STUFF

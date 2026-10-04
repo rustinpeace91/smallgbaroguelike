@@ -31,13 +31,13 @@ PlayerMenu::PlayerMenu(bn::sprite_text_generator& text_generator)
   menu_box_.set_scale(horizontal_scale_, vertical_scale_);
   menu_box_.set_visible(true);
 
-  up_arrow_.set_x(bn::fixed(60));
+  up_arrow_.set_x(bn::fixed(-100));
   up_arrow_.set_y(bn::fixed(-10));
     up_arrow_.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 1); 
     down_arrow_.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 3);
   menu_arrow_.set_x(bn::fixed(arrow_position_x_));
   menu_arrow_.set_y(bn::fixed(arrow_position_y_  + 20 * (menu_position_index_ + 1)));
-  down_arrow_.set_x(bn::fixed(60));
+  down_arrow_.set_x(bn::fixed(-100));
   down_arrow_.set_y(bn::fixed(72));
   menu_arrow_.set_visible(false);
   up_arrow_.set_visible(false);

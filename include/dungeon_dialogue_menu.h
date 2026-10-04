@@ -27,10 +27,11 @@ namespace dungeon{
       // Make parameters?
       int menu_box_width_ = 125;
       int menu_box_height_ = 25;
-      int menu_box_position_x_ = 50;
+      // int menu_box_position_x_ = 50;
+      int menu_box_position_x_ = 0;
       int menu_box_position_y_ = 45;
 
-      int text_start_x_ = 0;
+      int text_start_x_ = -50;
       int text_start_y_ = 40;
       int text_spacing_ = 10;
 
