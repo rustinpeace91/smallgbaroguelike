@@ -24,8 +24,8 @@ PlayerMenu::PlayerMenu(bn::sprite_text_generator& text_generator)
       down_arrow_(bn::sprite_items::menuarrow.create_sprite(0, 0)),
       menu_mode_(PlayerMenu::menu_options::MAIN_MENU)
 {
-  menu_box_.set_position(0 + (120 - (menu_width_ / 2)),
-                        0 + (80 - (menu_height_ / 2)));
+  menu_box_.set_position(0 + (menu_start_x_ - (menu_width_ / 2)),
+                        0 + (menu_start_y_ - (menu_height_ / 2)));
   horizontal_scale_ = bn::fixed(menu_width_) / 64;
   vertical_scale_ = bn::fixed(menu_height_) / 64;
   menu_box_.set_scale(horizontal_scale_, vertical_scale_);
