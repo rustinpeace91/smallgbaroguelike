@@ -24,20 +24,20 @@ PlayerMenu::PlayerMenu(bn::sprite_text_generator& text_generator)
       down_arrow_(bn::sprite_items::menuarrow.create_sprite(0, 0)),
       menu_mode_(PlayerMenu::menu_options::MAIN_MENU)
 {
-  menu_box_.set_position(0 + (120 - (menu_width_ / 2)),
-                        0 + (80 - (menu_height_ / 2)));
+  menu_box_.set_position(0 + (menu_start_x_ - (menu_width_ / 2)),
+                        0 + (menu_start_y_ - (menu_height_ / 2)));
   horizontal_scale_ = bn::fixed(menu_width_) / 64;
   vertical_scale_ = bn::fixed(menu_height_) / 64;
   menu_box_.set_scale(horizontal_scale_, vertical_scale_);
   menu_box_.set_visible(true);
 
-  up_arrow_.set_x(bn::fixed(60));
+  up_arrow_.set_x(bn::fixed(-100));
   up_arrow_.set_y(bn::fixed(-10));
     up_arrow_.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 1); 
     down_arrow_.set_tiles(bn::sprite_items::menuarrow.tiles_item(), 3);
   menu_arrow_.set_x(bn::fixed(arrow_position_x_));
   menu_arrow_.set_y(bn::fixed(arrow_position_y_  + 20 * (menu_position_index_ + 1)));
-  down_arrow_.set_x(bn::fixed(60));
+  down_arrow_.set_x(bn::fixed(-100));
   down_arrow_.set_y(bn::fixed(72));
   menu_arrow_.set_visible(false);
   up_arrow_.set_visible(false);
@@ -47,7 +47,6 @@ PlayerMenu::PlayerMenu(bn::sprite_text_generator& text_generator)
 }
 
 void PlayerMenu::generate_inventory_menu_text(
-
     int page_start,
     int page_end
 ){
@@ -55,11 +54,9 @@ void PlayerMenu::generate_inventory_menu_text(
     // DummyData::INVENTORY
     //
 
-    int text_start_x = 55;
-    int text_start_y = 0;
 
-    int text_x = text_start_x;
-    int text_y = text_start_y;
+    int text_x = text_start_x_;
+    int text_y = text_start_y_;
     for(int i =page_start; i< page_end and i < std::ssize(DummyData::INVENTORY); i++){
         text_generator_.generate(
             text_x,
@@ -74,11 +71,9 @@ void PlayerMenu::generate_inventory_menu_text(
 
 void PlayerMenu::generate_menu_text()
 {
-    int text_start_x = 55;
-    int text_start_y = 0;
 
-    int text_x = text_start_x;
-    int text_y = text_start_y;
+    int text_x = text_start_x_;
+    int text_y = text_start_y_;
 
     for(const char* option : DummyData::MAIN_MENU_OPTIONS)
     {

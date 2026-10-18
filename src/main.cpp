@@ -3,7 +3,7 @@
 #include "bn_keypad.h"
 #include "bn_unique_ptr.h"
 #include "bn_sprite_text_generator.h"
-
+#include "bn_sprites.h"
 // #include "bn_sprite_text_generator.h"
 // #include "bn_regular_bg_map_cell_info.h"
 //
@@ -13,6 +13,13 @@
 #include "dungeon_player_menu.h"
 #include "dungeon_game_state.h"
 #include "common_variable_8x16_sprite_font.h"
+
+
+//------TEXBOX IMPORTS --------
+#include "bn_sprite_items_bg.h"
+#include "bn_sprite_items_menuarrow.h"
+#include "dummy_data.h"
+#include "bn_log.h"
 
 int main()
 {
@@ -24,12 +31,16 @@ int main()
     bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
     // assets end
     bn::unique_ptr<dungeon::Scene> scene(
-        new dungeon::Overworld(game_state)
+        new dungeon::Overworld(game_state, text_generator)
     );
 
     bn::optional<dungeon::scene_type> next_scene = dungeon::scene_type::OVERWORLD;
 
+
     while(true){
+
+
+
         if(scene){
             next_scene = scene->update();
         }
@@ -40,7 +51,7 @@ int main()
             // switch statement on next_scene
             switch(*next_scene){
                 case dungeon::scene_type::OVERWORLD:
-                    scene.reset(new dungeon::Overworld(game_state));
+                    scene.reset(new dungeon::Overworld(game_state, text_generator));
                     break;
                 case dungeon::scene_type::MENU:
                     scene.reset(new dungeon::PlayerMenu(text_generator));
@@ -50,7 +61,6 @@ int main()
             }
             // smart pointer (?) owernship will change here
         }
-
         bn::core::update();
     };
 
