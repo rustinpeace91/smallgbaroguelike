@@ -9,7 +9,7 @@
 //
 #include "dungeon_scene.h"
 #include "dungeon_scene_type.h"
-#include "dungeon_overworld.h"
+#include "dungeon_overworld_fps.h"
 #include "dungeon_player_menu.h"
 #include "dungeon_game_state.h"
 #include "common_variable_8x16_sprite_font.h"
@@ -31,7 +31,7 @@ int main()
     bn::sprite_text_generator text_generator(common::variable_8x16_sprite_font);
     // assets end
     bn::unique_ptr<dungeon::Scene> scene(
-        new dungeon::Overworld(game_state, text_generator)
+        new dungeon::OverworldFPS(game_state, text_generator)
     );
 
     bn::optional<dungeon::scene_type> next_scene = dungeon::scene_type::OVERWORLD;
@@ -51,7 +51,7 @@ int main()
             // switch statement on next_scene
             switch(*next_scene){
                 case dungeon::scene_type::OVERWORLD:
-                    scene.reset(new dungeon::Overworld(game_state, text_generator));
+                    scene.reset(new dungeon::OverworldFPS(game_state, text_generator));
                     break;
                 case dungeon::scene_type::MENU:
                     scene.reset(new dungeon::PlayerMenu(text_generator));
